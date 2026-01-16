@@ -9,14 +9,8 @@ theme = "hugoplate"
 timeZone = "Asia/Ho_Chi_Minh"
 # post excerpt
 summaryLength = 10 # see https://gohugo.io/content-management/summaries/#automatic-summary
-# disable language
-disableLanguages = [
-] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
+# disable language (removed multilingual support)
 hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
-# default language
-defaultContentLanguage = 'en'
-# defaultContentLanguageInSubdir need to be true if you want to use the language code as a subdirectory and language specific 404 page
-defaultContentLanguageInSubdir = false
 
 ########################### Services #############################
 [services]

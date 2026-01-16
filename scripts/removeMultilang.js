@@ -2,14 +2,14 @@ import fs from "node:fs";
 import path from "node:path";
 
 // Paths
-const notFoundPage = "layouts/404.en.html";
-const menusPath = "exampleSite/config/_default/menus.en.toml";
-const languagesPath = "exampleSite/config/_default/languages.toml";
-const hugoConfigPath = "exampleSite/hugo.toml";
-const developmentDir = "exampleSite/config/development";
-const i18nDir = "exampleSite/i18n";
-const englishContentDir = "exampleSite/content/english";
-const targetContentDir = "exampleSite/content";
+const notFoundPage = "themes/hugoplate/layouts/404.en.html";
+const menusPath = "config/_default/menus.en.toml";
+const languagesPath = "config/_default/languages.toml";
+const hugoConfigPath = "hugo.toml";
+const developmentDir = "config/development";
+const i18nDir = "i18n";
+const englishContentDir = "content/english";
+const targetContentDir = "content";
 
 // Helper function to remove directory recursively
 const removeDirRecursive = (dirPath) => {

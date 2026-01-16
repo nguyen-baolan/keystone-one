@@ -4,6 +4,7 @@
   "version": "3.3.1",
   "license": "MIT",
   "author": "zeon.studio",
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"node scripts/themeGenerator.js --watch\" \"hugo server\"",
     "build": "node scripts/themeGenerator.js && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
