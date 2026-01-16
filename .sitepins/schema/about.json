@@ -1,0 +1,51 @@
+{
+  "file": "content/about/_index.md",
+  "name": "about",
+  "fileType": "md",
+  "fmType": "yaml",
+  "template": [
+    {
+      "name": "title",
+      "label": "New Title",
+      "type": "string",
+      "value": "Value",
+      "description": "Description",
+      "defaultValue": "Value"
+    },
+    {
+      "name": "meta_title",
+      "label": "Meta Title",
+      "type": "string",
+      "value": "About",
+      "defaultValue": "About"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "string",
+      "value": "this is meta description",
+      "defaultValue": "this is meta description"
+    },
+    {
+      "name": "image",
+      "label": "Image",
+      "type": "media",
+      "value": "/images/avatar.png",
+      "defaultValue": "/images/avatar.png"
+    },
+    {
+      "name": "layout",
+      "label": "Layout",
+      "type": "string",
+      "value": "about",
+      "defaultValue": "about"
+    },
+    {
+      "name": "draft",
+      "label": "Draft",
+      "type": "boolean",
+      "value": false,
+      "defaultValue": false
+    }
+  ]
+}
