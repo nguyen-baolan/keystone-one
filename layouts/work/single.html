@@ -3,6 +3,16 @@
     <div class="container">
       <div class="row justify-center">
         <article class="lg:col-10">
+          {{/* Deep-dive back navigation (Pattern A) */}}
+          {{ with .Params.parent_case }}
+            {{ $hub := site.GetPage (printf "work/%s" .) }}
+            {{ if $hub }}
+              <div class="mb-6">
+                <a class="btn btn-outline-primary btn-sm" href="{{ $hub.RelPermalink }}">← Back to case hub</a>
+              </div>
+            {{ end }}
+          {{ end }}
+
           {{ $image := .Params.image }}
           {{ if $image }}
             <div class="mb-10">

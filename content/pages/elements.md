@@ -40,7 +40,9 @@ Strike through uses two tildes. ~~Scratch this.~~
 
 ### Button
 
-{{< button label="Button" link="/" style="solid" >}}
+{{< button href="/" variant="primary" size="sm" >}}
+Button
+{{< /button >}}
 
 <hr>
 

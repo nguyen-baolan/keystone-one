@@ -3,22 +3,72 @@
 
   <section class="section">
     <div class="container">
-      <div class="row">
-        {{/*
-          Show ALL case studies (parents + children) in a flat grid.
-          Use RegularPagesRecursive so nested children under branch bundles are included.
-        */}}
-        {{ $pages := .RegularPagesRecursive }}
-        {{ $paginator := .Paginate $pages }}
-        {{ range $paginator.Pages }}
-          <div class="col-12 md:col-6 lg:col-4 mb-8">
-            {{ partial "components/work-card" . }}
-          </div>
-        {{ end }}
-      </div>
+      {{/*
+        Pattern A (Case hub + deep-dive pages)
 
-      {{ partial "components/pagination.html" . }}
+        - /work/ should list CASE HUBS (section pages under work/).
+        - /work/<case>/ should render as a hub page (not a grid of children).
+      */}}
+
+      {{/*
+        Identify the top-level /work/ list page.
+        Using .FirstSection is more robust than hardcoding "/work/" and is future-proof for baseURL/language prefixes.
+      */}}
+      {{ $isWorkRoot := and .FirstSection (eq .RelPermalink .FirstSection.RelPermalink) }}
+
+      {{ if $isWorkRoot }}
+        <div class="row">
+          {{/*
+            List only case hubs.
+            In Hugo, these are section pages (_index.md) directly under /content/work/<case>/.
+          */}}
+          {{ $cases := .Sections }}
+          {{ $paginator := .Paginate $cases }}
+          {{ range $paginator.Pages }}
+            <div class="col-12 md:col-6 lg:col-4 mb-8">
+              {{ partial "components/work-card" . }}
+            </div>
+          {{ end }}
+        </div>
+
+        {{ partial "components/pagination.html" . }}
+      {{ else }}
+        {{/* Case hub page */}}
+        <div class="row justify-center">
+          <article class="lg:col-10">
+            {{ $image := .Params.image }}
+            {{ if $image }}
+              <div class="mb-10">
+                {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
+              </div>
+            {{ end }}
+
+            <h1 class="h2 mb-6">{{ .Title }}</h1>
+
+            <div class="content mb-10">
+              {{ .Content }}
+            </div>
+
+            {{/* Deep dives (regular pages inside the case folder) */}}
+            {{ $dives := where .RegularPages "Params.draft" false }}
+            {{ if gt (len $dives) 0 }}
+              <section class="section pt-0">
+                <div class="container px-0">
+                  <h2 class="h3 mb-8">Deep dives</h2>
+
+                  <div class="row">
+                    {{ range $dives.ByWeight }}
+                      <div class="col-12 md:col-6 lg:col-4 mb-8">
+                        {{ partial "components/work-card" . }}
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              </section>
+            {{ end }}
+          </article>
+        </div>
+      {{ end }}
     </div>
   </section>
 {{ end }}
-
