@@ -1,0 +1,48 @@
+{{/*
+  Related Case Studies
+
+  Usage (front matter on a /work/ page):
+
+    related_cases:
+      - "work/some-case-study"
+      - "work/some-parent/some-child"
+
+  Notes:
+  - Uses the same card component as the /work/ index page: `components/work-card`.
+  - Entries are manually controlled; invalid references are ignored.
+*/}}
+
+{{ with .Params.related_cases }}
+  {{ $current := $.Page }}
+  {{ $related := slice }}
+
+  {{ range . }}
+    {{ $ref := . }}
+    {{ $p := site.GetPage $ref }}
+    {{ if not $p }}
+      {{/* Allow shorthand refs without the leading section (e.g. "some-slug"). */}}
+      {{ $p = site.GetPage (printf "work/%s" $ref) }}
+    {{ end }}
+
+    {{ if and $p (ne $p.RelPermalink $current.RelPermalink) }}
+      {{ $related = $related | append $p }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $related) 0 }}
+    <section class="section pt-0">
+      <div class="container">
+        <h2 class="h3 mb-8">Related case studies</h2>
+
+        <div class="row">
+          {{ range $related }}
+            <div class="col-12 md:col-6 lg:col-4 mb-8">
+              {{ partial "components/work-card" . }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
+
