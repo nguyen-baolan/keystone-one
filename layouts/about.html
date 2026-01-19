@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7 text-center">
+          {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}
+          <h2 class="h3 mb-6">{{ .Title }}</h2>
+          <div class="content">{{ .Content }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* Team section: reuse existing authors content + author-card component */}}
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-10 text-center">
+          <h2 class="h3">Team</h2>
+        </div>
+      </div>
+      <div class="row">
+        {{ with site.GetPage "authors" }}
+          {{ range .RegularPages }}
+            <div class="col-12 md:col-6 lg:col-4 mb-8">
+              {{ partial "components/author-card" . }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+
