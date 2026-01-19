@@ -12,17 +12,17 @@ challenge: "Capital allocation decisions were slow, inconsistent, and difficult 
 solution: "A standardized decision workflow with clear inputs/outputs, scoring, and review gates."
 
 # Optional media
-image: "/images/image-placeholder.png"
-card_image: "/images/image-placeholder.png"
+image: "/images/venture-team.jpg"
+card_image: "/images/venture-team.jpg"
 
 # Optional rich sections (homepage-style alternating image/text blocks)
 sections:
   - title: "Why this mattered"
-    image: "/images/service-1.png"
+    image: "/images/cube-green-3d.png"
     content: "Investment decisions depend on synthesizing fragmented, unstructured information into a defensible point of view—under time pressure and with real capital at risk.<br><br>Off-the-shelf AI tools could generate summaries, but failed on what mattered most: consistency, traceability, and trust.<br><br>The objective was not to produce more analysis, but to reduce decision friction while increasing confidence, explainability, and auditability—so the firm could scale capital deployment without scaling headcount."
 
   - title: "Approach"
-    image: "/images/service-2.png"
+    image: "/images/cubes-gold.jpg"
     content: "We designed and delivered an AI-first investment workflow grounded in business outcomes, governance, and day-to-day usability:"
     bulletpoints:
       - "Prioritized high-impact decision points with Partners and PICs, aligned to investment workflows"
@@ -33,8 +33,8 @@ sections:
       - "Embedded Human-In-The-Loop reviews every week to ensure accountability and auditability"
 
   - title: "What changed"
-    image: "/images/service-3.png"
-    content: "Teams perceived tangible value in under 60 days, creating internal pull for the transformation.<br><br>The solution reached production in under 4 months, compressing a mission-critical due diligence workflow by ~90% while enabling deeper, more nuanced investment analysis than individual expert judgment alone.<br><br>The result was not an AI pilot, but a repeatable, governable decision workflow—ready to scale with the firm."
+    image: "/images/cubes-green.jpg"
+    content: "Teams perceived tangible value in under 60 days, creating internal pull for the transformation.<br><br>The solution reached production in under 4 months, compressing a mission-critical due diligence workflow by ~90% while enabling deeper, more nuanced investment analysis than individual expert judgment alone.<br><br>The result was not an AI pilot, but a repeatable, governable decision workflow, ready to scale with the firm."
 
 draft: false
 ---
@@ -72,15 +72,40 @@ We partnered directly with executives and the investment team to:
 - Design an operating model that made outputs auditable and explainable while ensuring the AI solution become embedded in the Client's investment processes
 - Build and deploy a production-grade AI solution on the Client's cloud environment
 
-## Outcome
+## Outcomes
 
-fill in the blanks
+Within four months, the client moved from fragmented, intuition-heavy decision making to a **repeatable, auditable capital allocation system** that could scale with the venture studio.
+
+The engagement delivered outcomes at three levels: decision quality, operating leverage, and governance.
+
+### Material acceleration of investment throughput
+- End-to-end due diligence cycles were compressed by ~90%, reducing weeks of synthesis and review from weeks to hours.
+- Investment teams were able to evaluate more opportunities in parallel without increasing headcount.
+- Partners and Investment Committees spent less time reconstructing context and more time debating true decision trade-offs.
+
+### Higher consistency and decision quality
+- Every investment decision followed the same explicit structure: thesis, assumptions, risks, alternatives, and scoring.
+- AI outputs met or exceeded internal expert judgment on defined evaluation criteria, as validated through ongoing EVALS.
+- Decisions became more consistent across deals and subjective bias was reduced.
+
+### Auditability and trust by design
+- Each output was traceable back to approved sources, assumptions, and analytical steps.
+- Human-in-the-Loop reviews were embedded as standard operating practice, not exceptions.
+- The firm gained a defensible audit trail suitable for internal governance and future regulatory scrutiny.
+
+### From pilot to production in less than 4 months
+- The solution reached production in under four months and was adopted as part of the core investment workflow.
+- Teams perceived tangible value within the first 60 days, creating internal pull.
+- The architecture and operating model positioned the client to scale capital deployment and decision complexity without linear cost growth.
+
+In short, the outcome was not "GPT-like analyst”, but a **scalable decision infrastructure**: one that reduced friction, increased confidence, and enabled the venture studio to allocate capital faster—without compromising quality, rigor, or governance.
+
 
 ---
 
 ## Excerpt of some of our work
 
-{{< figure src="/images/service-2.png" alt="Description" class="mb-6" >}}
+{{< figure src="/images/deliverable-flying.jpg" alt="Description" class="mb-6" >}}
 
 ### Step 1: mapping the Client's investment decision framework
 
@@ -115,9 +140,7 @@ Deliverables our Client got as a result:
 - Onboarding and training plans for their teams for each key AI modules
 - Identified step changes enabling new capabilities and their timing
 
-[→ Explore how we defined the roadmap]({{< relref "work/venture-studio-accelerate-capital/decision-mapping.md" >}})
-
-{{< button relref="work/venture-studio-accelerate-capital/decision-mapping.md" >}}
+{{< button relref="work/venture-studio-accelerate-capital/decision-mapping.md" target="_blank">}}
 Explore how we defined the roadmap
 {{< /button >}}
 
@@ -136,4 +159,6 @@ With short time-to-value in mind (less than 3 months) and AI explainability as f
 - Loose coupling of the different AI modules to let Client scale certain capabilities based on operational needs
 - Embedded human-in-the-loop reviews and audit trails by default
 
-[→ Dive into the technical architecture]({{< relref "work/venture-studio-accelerate-capital/decision-mapping.md" >}})
+{{< button relref="work/venture-studio-accelerate-capital/multi-agent-ai-workflows.md" target="_blank">}}
+Dive into the technical architecture
+{{< /button >}}

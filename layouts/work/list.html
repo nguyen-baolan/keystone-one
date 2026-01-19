@@ -39,11 +39,58 @@
             {{ $image := .Params.image }}
             {{ if $image }}
               <div class="mb-10">
-                {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
+                <img src="{{ $image | relURL }}" alt="{{ .Title }}" class="w-full rounded" />
               </div>
             {{ end }}
 
             <h1 class="h2 mb-6">{{ .Title }}</h1>
+
+            {{/*
+              Optional rich layout sections (mirrors the homepage features layout).
+
+              Content schema (front matter):
+                sections:
+                  - title: "..."
+                    image: "/images/...png"
+                    content: "..."        # markdown supported
+                    bulletpoints:         # optional
+                      - "..."
+            */}}
+            {{ with .Params.sections }}
+              <div class="mb-10">
+                {{ range $i, $s := . }}
+                  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+                    <div class="container px-0">
+                      <div class="row items-center justify-between">
+                        <div class="mb:md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
+                          {{ with $s.image }}
+                            <img src="{{ . | relURL }}" alt="section image" class="w-full rounded" />
+                          {{ end }}
+                        </div>
+                        <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+                          {{ with $s.title }}
+                            <h2 class="mb-4">{{ . | markdownify }}</h2>
+                          {{ end }}
+                          {{ with $s.content }}
+                            <p class="mb-8 text-lg">{{ . | markdownify }}</p>
+                          {{ end }}
+                          {{ with $s.bulletpoints }}
+                            <ul>
+                              {{ range . }}
+                                <li class="relative mb-4 pl-6">
+                                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                                  {{ . | markdownify }}
+                                </li>
+                              {{ end }}
+                            </ul>
+                          {{ end }}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                {{ end }}
+              </div>
+            {{ end }}
 
             <div class="content mb-10">
               {{ .Content }}

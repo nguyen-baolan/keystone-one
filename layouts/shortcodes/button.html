@@ -6,24 +6,39 @@
   - href (external URL)
   - variant (CSS suffix after btn-*, default: outline-primary)
   - size (CSS suffix after btn-*, default: sm)
+  - target (e.g. "_blank", "_self"; optional)
+  - rel (optional override; if target="_blank" and rel not set, uses "noopener noreferrer")
 
   Usage:
     {{< button relref="work/some-case/deep-dive.md" >}}Label{{< /button >}}
     {{< button href="https://example.com" variant="primary" size="sm" >}}Label{{< /button >}}
+    {{< button relref="work/some-case/deep-dive.md" target="_blank" >}}Label{{< /button >}}
 */}}
 
-{{ $path := .Get "relref" }}
-{{ $href := .Get "href" }}
-{{ $variant := .Get "variant" | default "outline-primary" }}
-{{ $size := .Get "size" | default "sm" }}
+{{- $path := .Get "relref" -}}
+{{- $href := .Get "href" -}}
+{{- $variant := .Get "variant" | default "outline-primary" -}}
+{{- $size := .Get "size" | default "sm" -}}
+{{- $target := .Get "target" -}}
+{{- $rel := .Get "rel" -}}
 
-{{ $url := "" }}
-{{ if $path }}
-  {{ $url = .Page.RelRef (dict "path" $path) }}
-{{ else if $href }}
-  {{ $url = $href }}
-{{ end }}
+{{- $url := "" -}}
+{{- if $path -}}
+  {{- $url = .Page.RelRef (dict "path" $path) -}}
+{{- else if $href -}}
+  {{- $url = $href -}}
+{{- end -}}
 
-<a class="btn btn-{{ $variant }} btn-{{ $size }}" href="{{ $url | safeURL }}">
-  {{ .Inner | plainify }}
+{{- /* If opening in new tab and rel not explicitly provided, set safe default */ -}}
+{{- if and (eq $target "_blank") (not $rel) -}}
+  {{- $rel = "noopener noreferrer" -}}
+{{- end -}}
+
+<a
+  class="btn btn-{{ $variant }} btn-{{ $size }}"
+  href="{{ $url | safeURL }}"
+  {{- with $target }} target="{{ . }}"{{- end -}}
+  {{- with $rel }} rel="{{ . }}"{{- end -}}
+>
+  {{- .Inner | plainify -}}
 </a>

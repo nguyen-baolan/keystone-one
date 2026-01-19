@@ -13,10 +13,29 @@
             {{ end }}
           {{ end }}
 
+          {{/*
+            Resolve images from the Hugo assets pipeline when possible.
+
+            Why:
+            - In this repo many images live in `assets/images/...`.
+            - Simply outputting `/images/foo.jpg` does NOT guarantee Hugo will publish that file.
+            - Using `resources.Get` ensures the asset is discovered & emitted, fixing the
+              "works only if used elsewhere first" behavior.
+
+            Accepts either:
+            - "/images/foo.jpg" (leading slash)
+            - "images/foo.jpg" (no leading slash)
+            - External URLs (fallback to relURL).
+          */}}
           {{ $image := .Params.image }}
           {{ if $image }}
             <div class="mb-10">
-              {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
+              {{ $imgPath := strings.TrimPrefix "/" $image }}
+              {{ with resources.Get $imgPath }}
+                <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="w-full rounded" />
+              {{ else }}
+                <img src="{{ $image | relURL }}" alt="{{ .Title }}" class="w-full rounded" />
+              {{ end }}
             </div>
           {{ end }}
 
@@ -41,7 +60,13 @@
                     <div class="row items-center justify-between">
                       <div class="mb:md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
                         {{ with $s.image }}
-                          {{ partial "image" (dict "Src" . "Alt" "section image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+                          {{ $sectionImg := . }}
+                          {{ $sectionImgPath := strings.TrimPrefix "/" $sectionImg }}
+                          {{ with resources.Get $sectionImgPath }}
+                            <img src="{{ .RelPermalink }}" alt="section image" class="w-full rounded" />
+                          {{ else }}
+                            <img src="{{ $sectionImg | relURL }}" alt="section image" class="w-full rounded" />
+                          {{ end }}
                         {{ end }}
                       </div>
                       <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
@@ -71,7 +96,12 @@
 
           <div class="content mb-10">
             {{/* Keep TOC for readability on long case studies */}}
-            {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+            {{ with .TableOfContents }}
+              <div class="toc mb-6">
+                <h3 class="text-lg font-semibold mb-2">Table of Contents</h3>
+                {{ . }}
+              </div>
+            {{ end }}
             {{ .Content }}
           </div>
 
