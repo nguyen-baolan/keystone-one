@@ -1,51 +1,57 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+  title: "Execution-first AI systems that deliver outcomes"
+  content: "Keystone One helps leadership teams turn AI into measurable business outcomes—by designing, building, and embedding production-grade systems into real workflows."
   image: "/images/banner.png"
+  # Optional hero background video
+  # video:
+  #   enabled: true
+  #   src: "/videos/hero.mp4"     # mp4 file under /static/videos/
+  #   poster: "/images/banner.png" # optional
+  #   force_mobile: false          # default false: use image on mobile
   button:
     enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+    label: "Talk to us"
+    link: "/contact"
 
 # Features
 features:
-  - title: "What's Included in Hugoplate"
+  - title: "What we help you achieve"
     image: "/images/service-1.png"
-    content: "Hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in Hugoplate"
+    content: "We partner with senior leaders to move AI beyond pilots—into decision-making and operations—so it reliably reduces friction, accelerates decisions, and unlocks capacity."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Hugo and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "Clarity on where AI should—and should not—be applied"
+      - "A prioritized roadmap tied to business value and feasibility"
+      - "Production systems that teams actually use"
+      - "Governance and risk alignment for complex or regulated environments"
+      - "Internal capability to operate and evolve what we ship"
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
 
-  - title: "Discover the Key Features Of Hugo"
+  - title: "AI readiness and capability assessment"
     image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "A senior-led assessment of your AI maturity, operating constraints, and data reality—followed by a shortlist of value-aligned use cases and a clear path to delivery."
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "Identify high-value, feasible use cases (not a long list of ideas)"
+      - "Define ownership, success criteria, and delivery sequence"
+      - "Surface governance, risk, and adoption blockers early"
     button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
+      enable: false
+      label: ""
+      link: ""
 
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
+  - title: "Operating model design and execution"
     image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
+    content: "Most AI initiatives stall because they’re disconnected from business ownership and operating reality. We redesign workflows and governance so AI can be embedded safely and adopted.
+    "
     bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Define how AI fits into decisions and day-to-day work"
+      - "Align governance, risk, and accountability with leadership"
+      - "Build and integrate production-grade systems (not experiments)"
+      - "Deploy, onboard, and hand over to internal teams"
     button:
       enable: false
       label: ""

@@ -1,29 +1,29 @@
 ---
 enable: true
-title: "What Users Are Saying About Hugoplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Hugoplate."
+title: "Built for real operating environments"
+description: "We work with leadership teams in high-stakes contexts where failure has real cost. Our focus is execution, governance, and adoption—not experimentation." 
 
 # Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Executive Sponsor"
+    designation: "Investment & Strategy"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "They didn’t sell tools or a pilot. They helped us define what mattered, put governance around it, and deliver something we could actually run."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "COO"
+    designation: "Regulated Enterprise"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "What we needed was a path to production with clear ownership and risk controls. Keystone One brought judgment and execution."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "CTO"
+    designation: "Financial Services"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "They were senior-led and hands-on. The work moved beyond experimentation and into a workflow our teams adopted."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Head of Operations"
+    designation: "Complex Operating Environment"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "The difference was focus: fewer initiatives, clearer priorities, and systems embedded into how work gets done."
 
 # don't create a separate page
 build:

@@ -1,0 +1,100 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-6 mx-auto">
+          {{/*
+            Netlify Forms + Netlify reCAPTCHA
+            - data-netlify="true"
+            - hidden form-name
+            - honeypot (bot-field)
+            - data-netlify-recaptcha="true"
+          */}}
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true">
+
+            <input type="hidden" name="form-name" value="contact" />
+
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="mb-6">
+              <label for="name" class="form-label">
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="John Doe"
+                type="text"
+                required />
+            </div>
+
+            <div class="mb-6">
+              <label for="email" class="form-label">
+                Working Mail <span class="text-red-500">*</span>
+              </label>
+              <input
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="john.doe@email.com"
+                type="email"
+                required />
+            </div>
+
+            <div class="mb-6">
+              <label for="message" class="form-label">
+                Anything else? <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-input"
+                placeholder="Message goes here..."
+                rows="8"
+                required></textarea>
+            </div>
+
+            <div class="mb-6">
+              <div data-netlify-recaptcha="true"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* Keep optional Google map behavior as per existing template */}}
+  {{ with site.Params.google_map }}
+    {{ if .enable }}
+      <div
+        id="map"
+        style="height: 400px;"
+        data-latitude="{{ .map_latitude }}"
+        data-longitude="{{ .map_longitude }}"
+        data-marker="{{ .map_marker | relURL }}"
+        data-marker-name="{{ site.Title }}"></div>
+    {{ end }}
+  {{ end }}
+
+  {{ if site.Params.google_map.enable }}
+    {{ $gmap := resources.Get "plugins/maps/google-map.js" }}
+    <script defer src="{{ $gmap.RelPermalink }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
+  {{ end }}
+
+{{ end }}
+

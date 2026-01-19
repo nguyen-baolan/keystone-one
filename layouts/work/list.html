@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{/*
+          Show ALL case studies (parents + children) in a flat grid.
+          Use RegularPagesRecursive so nested children under branch bundles are included.
+        */}}
+        {{ $pages := .RegularPagesRecursive }}
+        {{ $paginator := .Paginate $pages }}
+        {{ range $paginator.Pages }}
+          <div class="col-12 md:col-6 lg:col-4 mb-8">
+            {{ partial "components/work-card" . }}
+          </div>
+        {{ end }}
+      </div>
+
+      {{ partial "components/pagination.html" . }}
+    </div>
+  </section>
+{{ end }}
+
