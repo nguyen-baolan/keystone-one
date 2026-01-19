@@ -4,6 +4,6 @@ meta_title: About
 description: this is meta description
 image: /images/avatar.png
 layout: about
-draft: false
+draft: true
 ---
 Hello world

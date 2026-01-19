@@ -1,1 +1,27 @@
 /* Add your own custom styles here */
+
+/* Work card: keep consistent heights in the /work grid */
+.work-card {
+  @apply flex flex-col h-full;
+}
+
+.work-card h4 {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+}
+
+.work-card-challenge,
+.work-card-solution {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+}
+
+.work-card .btn {
+  @apply mt-auto;
+}

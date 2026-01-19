@@ -1,4 +1,4 @@
-<div class="bg-body dark:bg-darkmode-body">
+<div class="work-card bg-body dark:bg-darkmode-body">
   {{ $image := .Params.card_image | default .Params.image }}
   {{ if $image }}
     {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
@@ -18,17 +18,16 @@
   </h4>
 
   {{ with .Params.challenge }}
-    <p class="mb-2 text-sm">
+    <p class="work-card-challenge mb-2 text-sm">
       <span class="font-semibold">Challenge:</span> {{ . | markdownify }}
     </p>
   {{ end }}
 
   {{ with .Params.solution }}
-    <p class="mb-6 text-sm">
+    <p class="work-card-solution mb-6 text-sm">
       <span class="font-semibold">Solution:</span> {{ . | markdownify }}
     </p>
   {{ end }}
 
   <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">Read case study</a>
 </div>
-
