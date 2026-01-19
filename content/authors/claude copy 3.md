@@ -1,5 +1,5 @@
 ---
-title: Claude 0
+title: Claude 3
 image: "/images/claude-icon.png"
 image_type: "logo"
 description: Claude team member

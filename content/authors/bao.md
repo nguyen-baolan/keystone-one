@@ -2,6 +2,7 @@
 title: Bao Nguyen
 email: nguyen.baolan@gmail.com
 image: "/images/avatar.png"
+image_type: "photo"
 description: this is meta description
 social:
   - name: linkedin

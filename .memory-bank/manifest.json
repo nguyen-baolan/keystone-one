@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-19T11:01:00+07:00",
+  "projectName": "Keystone One",
+  "projectType": "Hugo Static Site",
+  "memoryBankEntries": [
+    {
+      "id": "readme",
+      "title": "Memory Bank README",
+      "path": "README.md",
+      "category": "documentation",
+      "description": "Overview of the memory bank system and structure",
+      "priority": "high"
+    },
+    {
+      "id": "project-overview",
+      "title": "Project Overview",
+      "path": "project-overview.md",
+      "category": "overview",
+      "description": "High-level summary of the Keystone One project",
+      "priority": "critical"
+    },
+    {
+      "id": "architecture",
+      "title": "System Architecture",
+      "path": "architecture.md",
+      "category": "technical",
+      "description": "Architecture patterns, component structure, and design decisions",
+      "priority": "high"
+    },
+    {
+      "id": "configuration",
+      "title": "Configuration Reference",
+      "path": "configuration.md",
+      "category": "technical",
+      "description": "Configuration files, settings, and customization options",
+      "priority": "high"
+    },
+    {
+      "id": "content-structure",
+      "title": "Content Structure",
+      "path": "content-structure.md",
+      "category": "content",
+      "description": "Content organization, types, and authoring guidelines",
+      "priority": "medium"
+    },
+    {
+      "id": "development-workflow",
+      "title": "Development Workflow",
+      "path": "development-workflow.md",
+      "category": "process",
+      "description": "Development commands, build process, and deployment",
+      "priority": "high"
+    },
+    {
+      "id": "tech-stack",
+      "title": "Technology Stack",
+      "path": "context/tech-stack.md",
+      "category": "technical",
+      "description": "Technologies, frameworks, and tools used in the project",
+      "priority": "medium"
+    },
+    {
+      "id": "conventions",
+      "title": "Coding Conventions",
+      "path": "context/conventions.md",
+      "category": "standards",
+      "description": "Code style, naming conventions, and best practices",
+      "priority": "medium"
+    },
+    {
+      "id": "adr-001",
+      "title": "ADR 001: Memory Bank Initialization",
+      "path": "decisions/001-memory-bank-initialization.md",
+      "category": "decision",
+      "description": "Decision to implement structured memory bank system",
+      "priority": "low"
+    }
+  ],
+  "categories": {
+    "documentation": "General documentation and guides",
+    "overview": "High-level project information",
+    "technical": "Technical implementation details",
+    "content": "Content management and structure",
+    "process": "Development and operational processes",
+    "standards": "Guidelines and conventions",
+    "decision": "Architecture Decision Records (ADRs)"
+  }
+}

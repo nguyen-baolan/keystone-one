@@ -48,3 +48,53 @@
   @apply prose-tr:border-border dark:prose-tr:border-darkmode-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px] dark:prose-td:text-darkmode-text;
 }
+
+/* author card grid styles */
+.author-card {
+  @apply flex flex-col h-full;
+}
+
+.author-card-media {
+  @apply relative w-full overflow-hidden rounded mb-6;
+  aspect-ratio: 1 / 1;
+}
+
+.author-card-media img {
+  @apply w-full h-full object-cover;
+}
+
+.author-card-media.is-logo img {
+  @apply object-contain p-4;
+}
+
+.author-card-media .placeholder-icon {
+  @apply flex items-center justify-center w-full h-full bg-light dark:bg-darkmode-light;
+}
+
+.author-card-media .placeholder-icon svg {
+  @apply w-16 h-16 text-text/30 dark:text-darkmode-text/30;
+}
+
+.author-card-content {
+  @apply flex-1 flex flex-col;
+}
+
+.author-card-name {
+  @apply mb-3 overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+}
+
+.author-card-description {
+  @apply mb-4 overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+}
+
+.author-card-footer {
+  @apply mt-auto;
+}
