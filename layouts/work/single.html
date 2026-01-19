@@ -12,11 +12,61 @@
 
           <h1 class="h2 mb-6">{{ .Title }}</h1>
 
+          {{/*
+            Optional rich layout sections (mirrors the homepage “features” layout).
+
+            Content schema (front matter):
+              sections:
+                - title: "..."
+                  image: "/images/...png"
+                  content: "..."        # markdown supported
+                  bulletpoints:         # optional
+                    - "..."
+          */}}
+          {{ with .Params.sections }}
+            <div class="mb-10">
+              {{ range $i, $s := . }}
+                <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+                  <div class="container px-0">
+                    <div class="row items-center justify-between">
+                      <div class="mb:md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
+                        {{ with $s.image }}
+                          {{ partial "image" (dict "Src" . "Alt" "section image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+                        {{ end }}
+                      </div>
+                      <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+                        {{ with $s.title }}
+                          <h2 class="mb-4">{{ . | markdownify }}</h2>
+                        {{ end }}
+                        {{ with $s.content }}
+                          <p class="mb-8 text-lg">{{ . | markdownify }}</p>
+                        {{ end }}
+                        {{ with $s.bulletpoints }}
+                          <ul>
+                            {{ range . }}
+                              <li class="relative mb-4 pl-6">
+                                <i class="fa fa-check absolute left-0 top-1.5"></i>
+                                {{ . | markdownify }}
+                              </li>
+                            {{ end }}
+                          </ul>
+                        {{ end }}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              {{ end }}
+            </div>
+          {{ end }}
+
           <div class="content mb-10">
             {{/* Keep TOC for readability on long case studies */}}
             {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
             {{ .Content }}
           </div>
+
+          {{/* Optional: manually-curated related case studies (cards match /work/) */}}
+          {{ partial "components/related-cases" . }}
 
           {{/*
             IMPORTANT: No Disqus / comments for case studies.
@@ -27,4 +77,3 @@
     </div>
   </section>
 {{ end }}
-
