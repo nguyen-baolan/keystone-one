@@ -29,10 +29,6 @@ resources
 jsconfig.json
 hugo_stats.json
 
-# Lock files (ignored by request)
-package-lock.json
-go.sum
-yarn.lock
 
 # Hugo cache
 .hugo_build.lock
