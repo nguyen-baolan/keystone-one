@@ -62,6 +62,9 @@ jobs:
       - name: Install npm dependencies
         run: npm ci || npm install
 
+      - name: Setup Project          
+        run: npm run project-setup
+
       - name: Build site
         env:
           # Optional: set this secret in GitHub (Settings → Secrets and variables → Actions)
