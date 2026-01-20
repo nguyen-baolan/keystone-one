@@ -72,9 +72,18 @@ jobs:
           # NOTE: Hugo security policy only allows HUGO_* env vars.
           HUGO_FORMSPREE_ACTION: ${{ secrets.FORMSPREE_ACTION }}
         run: |
+          # Generate theme assets (fonts, colors, etc.)
           node scripts/themeGenerator.js
-          hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+          # Build Hugo site using baseURL from hugo.toml
+          hugo \
+            --gc \
+            --minify \
+            --templateMetrics \
+            --templateMetricsHints \
+            --forceSyncStatic
+
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
