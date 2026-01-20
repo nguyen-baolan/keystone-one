@@ -1,5 +1,22 @@
 Thumbs.db
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Desktop.ini
+ehthumbs.db
+*$RECYCLE.BIN/
+
+# IDEs/editors
+.vscode/
+.idea/
+*.code-workspace
+
+# Env/secrets
+.env
+.env.*
+!.env.example
 .dist
 .tmp
 .lock
@@ -7,11 +24,19 @@ Thumbs.db
 npm-debug.log
 node_modules
 builds
-package-lock.json
 public
 resources
-.hugo_build.lock
 jsconfig.json
 hugo_stats.json
+
+# Lock files (ignored by request)
+package-lock.json
 go.sum
 yarn.lock
+
+# Hugo cache
+.hugo_build.lock
+.hugo_build.lock.*
+
+# Logs
+*.log

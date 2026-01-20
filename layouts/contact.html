@@ -6,26 +6,21 @@
       <div class="row">
         <div class="md:col-10 lg:col-6 mx-auto">
           {{/*
-            Netlify Forms + Netlify reCAPTCHA
-            - data-netlify="true"
-            - hidden form-name
-            - honeypot (bot-field)
-            - data-netlify-recaptcha="true"
+            Contact form (GitHub Pages compatible)
+
+            Uses Formspree:
+            - Create a form at https://formspree.io and copy your endpoint, e.g. https://formspree.io/f/abcdwxyz
+            - Recommended: set it via GitHub Actions secret (exported as HUGO_FORMSPREE_ACTION).
+            - Local fallback: set it in config as params.contact_form_action.
+
+            Notes:
+            - We keep the form markup/styling, but remove Netlify-only attributes.
+            - For basic anti-spam, consider enabling Formspree's spam protection in their dashboard.
           */}}
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true">
-
-            <input type="hidden" name="form-name" value="contact" />
-
-            <p class="hidden">
-              <label>
-                Don’t fill this out if you’re human: <input name="bot-field" />
-              </label>
-            </p>
+          {{/* Prefer env var (CI) so the endpoint isn't hardcoded in the repo.
+              Hugo's security policy in this repo only allows HUGO_* env vars by default. */}}
+          {{ $action := (getenv "HUGO_FORMSPREE_ACTION") | default site.Params.contact_form_action | default "#" }}
+          <form action="{{ $action }}" method="POST">
 
             <div class="mb-6">
               <label for="name" class="form-label">
@@ -66,10 +61,6 @@
                 required></textarea>
             </div>
 
-            <div class="mb-6">
-              <div data-netlify-recaptcha="true"></div>
-            </div>
-
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
@@ -97,4 +88,3 @@
   {{ end }}
 
 {{ end }}
-
