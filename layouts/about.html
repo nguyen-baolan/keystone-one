@@ -1,8 +1,8 @@
 {{ define "main" }}
   <section class="section-sm">
     <div class="container">
-      <div class="row justify-center">
-        <div class="md:col-10 lg:col-7 text-center">
+      <div class="row justify-start">
+        <div class="md:col-12 lg:col-10 text-left">
           {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}
           <h2 class="h3 mb-6">{{ .Title }}</h2>
           <div class="content">{{ .Content }}</div>
@@ -15,7 +15,7 @@
   <section class="section pt-0">
     <div class="container">
       <div class="row">
-        <div class="col-12 mb-10 text-center">
+        <div class="col-12 mb-10 text-left">
           <h2 class="h3">Team</h2>
         </div>
       </div>

@@ -18,11 +18,11 @@ card_image: "/images/venture-team.jpg"
 # Optional rich sections (homepage-style alternating image/text blocks)
 sections:
   - title: "Why this mattered"
-    image: "/images/cube-green-3d.png"
+    image: "/images/service-4.png"
     content: "Investment decisions depend on synthesizing fragmented, unstructured information into a defensible point of view—under time pressure and with real capital at risk.<br><br>Off-the-shelf AI tools could generate summaries, but failed on what mattered most: consistency, traceability, and trust.<br><br>The objective was not to produce more analysis, but to reduce decision friction while increasing confidence, explainability, and auditability—so the firm could scale capital deployment without scaling headcount."
 
   - title: "Approach"
-    image: "/images/cubes-gold.jpg"
+    image: "/images/service-5.png"
     content: "We designed and delivered an AI-first investment workflow grounded in business outcomes, governance, and day-to-day usability:"
     bulletpoints:
       - "Prioritized high-impact decision points with Partners and PICs, aligned to investment workflows"
@@ -33,7 +33,7 @@ sections:
       - "Embedded Human-In-The-Loop reviews every week to ensure accountability and auditability"
 
   - title: "What changed"
-    image: "/images/cubes-green.jpg"
+    image: "/images/service-6.png"
     content: "Teams perceived tangible value in under 60 days, creating internal pull for the transformation.<br><br>The solution reached production in under 4 months, compressing a mission-critical due diligence workflow by ~90% while enabling deeper, more nuanced investment analysis than individual expert judgment alone.<br><br>The result was not an AI pilot, but a repeatable, governable decision workflow, ready to scale with the firm."
 
 draft: false

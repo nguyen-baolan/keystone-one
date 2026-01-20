@@ -53,7 +53,7 @@ banner:
 # Features section
 features:
   - title: "Feature Title"
-    image: "/images/service-1.png"
+    image: "/images/service-4.png"
     content: "Feature description"
     button:
       enable: true

@@ -6,24 +6,19 @@ description: "We work with leadership teams in high-stakes contexts where failur
 # Testimonials
 testimonials:
   - name: "Executive Sponsor"
-    designation: "Investment & Strategy"
+    designation: "Investment Fund Partner"
     avatar: "/images/avatar-sm.png"
-    content: "They didn’t sell tools or a pilot. They helped us define what mattered, put governance around it, and deliver something we could actually run."
+    content: "They understood our fund’s priorities and constraints quickly and applied AI with good judgment, delivering value without disruption."
 
-  - name: "COO"
-    designation: "Regulated Enterprise"
+  - name: "VP of Venture Studio"
+    designation: "VC"
     avatar: "/images/avatar-sm.png"
-    content: "What we needed was a path to production with clear ownership and risk controls. Keystone One brought judgment and execution."
+    content: "They delivered results incredibly fast. We can now scale ourselves across many more ventures yet keep quality consistent."
 
-  - name: "CTO"
-    designation: "Financial Services"
+  - name: "Venture Building Lead"
+    designation: "Venture Studio"
     avatar: "/images/avatar-sm.png"
-    content: "They were senior-led and hands-on. The work moved beyond experimentation and into a workflow our teams adopted."
-
-  - name: "Head of Operations"
-    designation: "Complex Operating Environment"
-    avatar: "/images/avatar-sm.png"
-    content: "The difference was focus: fewer initiatives, clearer priorities, and systems embedded into how work gets done."
+    content: "It used to take me weeks to go from data to insights. Now, it takes 10 minutes."
 
 # don't create a separate page
 build:

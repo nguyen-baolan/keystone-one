@@ -13,13 +13,13 @@ challenge: "Venture due diligence constrained by analyst throughput, preventing 
 solution: "Multi-AI-agent solution autonomously performing investment-grade analysis with Human-In-The-Loop."
 
 # Optional media
-image: "/images/image-placeholder.png"
-card_image: "/images/image-placeholder.png"
+image: "/images/diagram-1.jpg"
+card_image: "/images/diagram-1.jpg"
 
 # Optional rich sections (homepage-style alternating image/text blocks)
 sections:
   - title: "Architecture principles"
-    image: "/images/service-2.png"
+    image: "/images/service-5.png"
     content: "A multi-agent workflow is only valuable in high-stakes decisions if it is traceable, eval-driven, and designed for human review. This page summarizes the key technical patterns we used."
 
 # Optional: manually-curated related case studies (renders at the bottom as cards)
