@@ -19,11 +19,36 @@
       {{ if $isWorkRoot }}
         <div class="row">
           {{/*
-            List only case hubs.
-            In Hugo, these are section pages (_index.md) directly under /content/work/<case>/.
+            List all case studies (top-level case hubs + deep dives) in the same grid.
+
+            - Top-level case hubs: .Sections
+            - Deep dives: RegularPages inside each case hub
+
+            Deep dives are expected to have:
+              parent_case: "<top-case-slug>"
+            Work card will render the parent reference when present.
           */}}
+
           {{ $cases := .Sections }}
-          {{ $paginator := .Paginate $cases }}
+          {{ $deepDives := slice }}
+          {{ range $cases }}
+            {{ $deepDives = $deepDives | append (where .RegularPages "Params.draft" false) }}
+          {{ end }}
+
+          {{/*
+            Merge and sort.
+
+            We want to preserve a stable order:
+            1) by Weight (when set)
+            2) then by Title
+
+            Note: Hugo's sort is stable, so we sort by Title first, then Weight.
+          */}}
+          {{ $all := $cases | append $deepDives }}
+          {{ $all = sort $all "Title" "asc" }}
+          {{ $all = sort $all "Weight" "asc" }}
+
+          {{ $paginator := .Paginate $all }}
           {{ range $paginator.Pages }}
             <div class="col-12 md:col-6 lg:col-4 mb-8">
               {{ partial "components/work-card" . }}

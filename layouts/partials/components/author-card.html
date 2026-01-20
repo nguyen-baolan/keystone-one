@@ -1,0 +1,86 @@
+{{/*
+  Author Card (override)
+
+  Input: . (an author page)
+  Output: card with image, name, expandable bio, and social links
+
+  Notes:
+  - Left-aligned text (text-left)
+  - Uses <details>/<summary> for an accessible no-JS “Read more” toggle
+  - Shows a short summary by default; expands to full content when opened
+*/}}
+
+<div class="author-card bg-light dark:bg-darkmode-light rounded p-8 text-left">
+  {{/* Media Section */}}
+  {{ $image := .Params.image }}
+  {{ $imageType := .Params.image_type | default "photo" }}
+  {{ $mediaClass := cond (eq $imageType "logo") "author-card-media is-logo" "author-card-media" }}
+
+  <div class="{{ $mediaClass }}">
+    {{ if $image }}
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "" "size" "300x300") }}
+    {{ else if .Params.Email }}
+      <img
+        alt="{{ .Title }}"
+        src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=300&pg&d=identicon" />
+    {{ else }}
+      <div class="placeholder-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </div>
+    {{ end }}
+  </div>
+
+  {{/* Content Section */}}
+  <div class="author-card-content">
+    <h4 class="author-card-name">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h4>
+
+    {{/*
+      Default: show Summary (what’s before <!--more--> if present)
+      Expanded: show full Content
+    */}}
+    {{ $summary := .Summary | plainify }}
+    {{ $hasMore := and $summary (ne $summary (.Content | plainify)) }}
+
+    {{ if $hasMore }}
+      <details class="author-card-bio">
+        <summary class="author-card-bio-summary">
+          <span class="author-card-description">{{ $summary }}</span>
+          <span class="author-card-bio-toggle" data-open="Read less" data-closed="Read more">Read more</span>
+        </summary>
+        <div class="author-card-bio-full content mt-3">
+          {{/*
+            When expanded, don't render the first heading as a big H1/H2.
+            Instead, restyle the first heading to look like a normal paragraph.
+          */}}
+          {{ $expanded := .Content }}
+          {{ $expanded = replaceRE `(?s)^\s*<h[1-6]([^>]*)>(.*?)</h[1-6]>` `<p class="author-card-expanded-lede">$2</p>` $expanded }}
+          {{ $expanded | safeHTML }}
+        </div>
+      </details>
+    {{ else }}
+      <p class="author-card-description">
+        {{ $summary }}
+      </p>
+    {{ end }}
+  </div>
+
+  {{/* Footer Section */}}
+  {{ with .Params.social }}
+    <div class="author-card-footer">
+      <ul class="social-icons">
+        {{ range . }}
+          <li>
+            <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow">
+              <span class="sr-only">{{ .title }}</span>
+              <i class="{{ .icon }}"></i>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+</div>

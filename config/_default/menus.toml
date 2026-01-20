@@ -11,15 +11,11 @@ name = "Our Work"
 url = "/work"
 weight = 2
 
+
 [[main]]
 name = "About"
 url = "/about"
 weight = 3
-
-[[main]]
-name = "Contact"
-url = "/contact"
-weight = 4
 
 
 # footer menu
@@ -29,11 +25,6 @@ url = "/about"
 weight = 1
 
 [[footer]]
-name = "Contact"
-url = "/contact"
-weight = 2
-
-[[footer]]
 name = "Privacy Policy"
 url = "/privacy-policy"
-weight = 3
+weight = 2

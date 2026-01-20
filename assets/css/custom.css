@@ -25,3 +25,60 @@
 .work-card .btn {
   @apply mt-auto;
 }
+
+/* Author card: expandable bio toggle */
+.author-card-bio summary {
+  @apply list-none cursor-pointer;
+}
+
+.author-card-bio summary::-webkit-details-marker {
+  display: none;
+}
+
+.author-card-bio-summary {
+  @apply text-left;
+}
+
+/* Override theme clamp when we control expand/collapse via <details> */
+.author-card-bio .author-card-description {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+
+.author-card-bio-toggle {
+  @apply mt-2 inline-block text-sm font-medium text-primary underline underline-offset-4;
+}
+
+.author-card-bio[open] .author-card-bio-toggle::before {
+  content: attr(data-open);
+}
+
+.author-card-bio:not([open]) .author-card-bio-toggle::before {
+  content: attr(data-closed);
+}
+
+/* Hide fallback text inside the toggle span; ::before will render the label */
+.author-card-bio-toggle {
+  font-size: 0;
+}
+
+.author-card-bio-toggle::before {
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* Add a blank space between the Read more toggle and the social icons */
+.author-card-bio-toggle {
+  @apply mr-2;
+}
+
+/* Expanded bio: render the first heading like a normal paragraph */
+.author-card-expanded-lede {
+  @apply mb-4 text-base font-normal;
+}
+
+/* Give a bit of breathing room between bio content / toggle and the social icons */
+.author-card-footer {
+  @apply pt-2;
+}

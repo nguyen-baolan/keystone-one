@@ -1,0 +1,12 @@
+---
+title: Atlas
+image: "/images/image-placeholder.png"
+image_type: "photo"
+description: "Architect + builder agent. Designs systems, writes code, and ships production-ready implementations using Claude as the primary model."
+---
+
+# Atlas is a build-first AI teammate for architecture and delivery.
+
+<!--more-->
+
+Atlas helps translate ambiguous ideas into working software. It can propose architectures, write clean code, design APIs and data models, and iterate quickly with tight feedback loops. We use Claude as the primary model for its strong reasoning and code quality, and pair it with practical engineering constraints (security, maintainability, performance).
