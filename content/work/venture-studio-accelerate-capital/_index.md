@@ -109,8 +109,6 @@ In short, the outcome was not "GPT-like analyst”, but a **scalable decision in
 
 ### Step 1: mapping the Client's investment decision framework
 
-{{< figure src="/images/process-mapping-2.png" alt="Description" class="mb-6" >}}
-
 Before introducing any technology, we worked with the investment team to make their existing decision process explicit.
 
 This meant clarifying how investment decisions were actually formed today: what inputs were used, how hypotheses were built, where risks were challenged, and who ultimately owned each decision.
@@ -122,6 +120,49 @@ This allowed us to clearly map out:
 - Architecture choice between autonomous AI and deterministic pipelines
 - How we would run EVALS to test and compare AI outputs VS human judgment
 - What needed to happen from a change management perspective
+
+{{< accordion "See an excerpt of what the process map looked like:" >}}
+
+{{< mermaid >}}
+flowchart TB
+  A["Trigger: new opportunity"] --> B["Intake and qualification"]
+  B --> C{"Fit and priority gate"}
+  C -- "No / defer" --> C1["Backlog or parked"]
+  C -- "Yes" --> P1["Phase 1 - Market and problem framing (thesis, ICP, market scan, sizing)"]
+
+  P1 --> G1{"Thesis gate"}
+  G1 -- "Revise" --> P1
+  G1 -- "Proceed" --> P2["Phase 2 - Commercial diligence (stakeholder calls, validation, GTM stress test)"]
+
+  P2 --> G2{"Commercial gate"}
+  G2 -- "Stop" --> S1["Stop or learnings captured"]
+  G2 -- "Iterate" --> P2
+  G2 -- "Proceed" --> P3["Phase 3 - Technical and operational diligence (feasibility, delivery plan, prototype milestones)"]
+
+  P3 --> G3{"Feasibility gate"}
+  G3 -- "Revise scope" --> P3
+  G3 -- "Proceed" --> P4["Phase 4 - Investment case and structuring (unit economics, value creation plan, IC memo)"]
+
+  P4 --> G4{"Approval gate"}
+  G4 -- "Reject" --> R1["Reject and rationale archived"]
+  G4 -- "Defer" --> C1
+  G4 -- "Approve" --> P5["Phase 5 - Post-investment execution (activation, KPI follow-up, pivot/scale/exit)"]
+
+  P5 --> Z["Outcomes narrative and lessons learned"]
+  Z -.-> B
+
+  X["Cross-cutting controls Evidence log • Assumptions register • Decision log • Risk register • Comms tracker"]
+  P1 -.-> X
+  P2 -.-> X
+  P3 -.-> X
+  P4 -.-> X
+  P5 -.-> X
+
+{{< /mermaid >}}
+{{< /accordion >}}
+
+
+###
 
 ### Step 2: defining the relevant transformation roadmap
 

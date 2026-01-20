@@ -1,5 +1,23 @@
 /* Add your own custom styles here */
 
+/* Enhanced accordion styling for better visibility */
+.accordion {
+  @apply bg-blue-50 dark:bg-blue-950 border-l-4 border-l-blue-500 dark:border-l-blue-400 border-blue-200 dark:border-blue-800 shadow-sm;
+}
+
+.accordion-header {
+  @apply text-blue-900 dark:text-blue-100 font-medium;
+}
+
+.accordion-header:hover {
+  @apply text-blue-700 dark:text-blue-200;
+}
+
+/* Optional: Add icon color consistency */
+.accordion-icon {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
 /* Work card: keep consistent heights in the /work grid */
 .work-card {
   @apply flex flex-col h-full;

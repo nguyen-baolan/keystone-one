@@ -1,3 +1,3 @@
 ---
-title: "Owners"
+title: "Team"
 ---

@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row justify-start">
         <div class="md:col-12 lg:col-10 text-left">
-          {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}
+          {{ with .Params.image }}
+            {{ partial "image" (dict "Src" . "Context" $.Page "Alt" $.Title "Class" "mx-auto mb-6" "Size" "200x200") }}
+          {{ end }}
           <h2 class="h3 mb-6">{{ .Title }}</h2>
           <div class="content">{{ .Content }}</div>
         </div>
@@ -21,7 +23,7 @@
       </div>
       <div class="row">
         {{ with site.GetPage "authors" }}
-          {{ range .RegularPages }}
+          {{ range .RegularPages.ByWeight }}
             <div class="col-12 md:col-6 lg:col-4 mb-8">
               {{ partial "components/author-card" . }}
             </div>
@@ -31,4 +33,3 @@
     </div>
   </section>
 {{ end }}
-

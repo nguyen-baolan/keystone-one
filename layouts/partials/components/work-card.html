@@ -1,9 +1,13 @@
 <div class="work-card bg-body dark:bg-darkmode-body">
   {{ $image := .Params.card_image | default .Params.image }}
-  {{ if $image }}
+  <!-- {{ if $image }}
     {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
+  {{ end }} -->
+  {{ if $image }}
+    <a href="{{ .RelPermalink }}">
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
+    </a>
   {{ end }}
-
   {{ with .Params.parent_case }}
     {{ $parent := site.GetPage (printf "work/%s" .) }}
     {{ if $parent }}
