@@ -10,6 +10,8 @@ aliases:
 # Used by /work/ card grid
 challenge: "Capital allocation decisions were slow, inconsistent, and difficult to audit."
 solution: "A standardized decision workflow with clear inputs/outputs, scoring, and review gates."
+audience: "CEO, CFO, Investment Committee, Venture Studio Leadership"
+reading_time: "8 min"
 
 # Optional media
 image: "/images/venture-team.jpg"
@@ -131,9 +133,7 @@ We typically help organizations:
 
 If this sounds relevant to your organization, let's start a conversation now.
 
-{{< button relref="contact" target="_blank">}}
-Start a conversation
-{{< /button >}}
+{{< cta-button relref="contact" >}}Start a conversation{{< /cta-button >}}
 <br><br>
 
 ---
@@ -236,4 +236,3 @@ Dive into the technical architecture
 {{< /button >}}
 
 ---
-

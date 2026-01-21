@@ -1,0 +1,46 @@
+{{/*
+  CTA Button shortcode - Prominent call-to-action button matching homepage style
+
+  Supports:
+  - relref (internal Hugo content path, preferred)
+  - href (external URL)
+  - variant (CSS suffix after btn-*, default: primary for prominent CTA)
+  - size (CSS suffix after btn-*, default: md for larger size)
+  - target (e.g. "_blank", "_self"; optional)
+  - rel (optional override; if target="_blank" and rel not set, uses "noopener noreferrer")
+
+  Usage:
+    {{< cta-button relref="contact" >}}Start a conversation{{< /cta-button >}}
+    {{< cta-button href="https://example.com" target="_blank" >}}Learn more{{< /cta-button >}}
+    {{< cta-button relref="contact" target="_blank" size="lg" >}}Contact us now{{< /cta-button >}}
+*/}}
+
+{{- $path := .Get "relref" -}}
+{{- $href := .Get "href" -}}
+{{- $variant := .Get "variant" | default "primary" -}}
+{{- $size := .Get "size" | default "md" -}}
+{{- $target := .Get "target" -}}
+{{- $rel := .Get "rel" -}}
+
+{{- $url := "" -}}
+{{- if $path -}}
+  {{- $url = .Page.RelRef (dict "path" $path) -}}
+{{- else if $href -}}
+  {{- $url = $href -}}
+{{- end -}}
+
+{{- /* If opening in new tab and rel not explicitly provided, set safe default */ -}}
+{{- if and (eq $target "_blank") (not $rel) -}}
+  {{- $rel = "noopener noreferrer" -}}
+{{- end -}}
+
+<div class="mt-6 mb-6">
+  <a
+    class="btn btn-{{ $variant }}{{ if ne $size "md" }} btn-{{ $size }}{{ end }}"
+    href="{{ $url | safeURL }}"
+    {{- with $target }} target="{{ . }}"{{- end -}}
+    {{- with $rel }} rel="{{ . }}"{{- end -}}
+  >
+    {{- .Inner | plainify -}}
+  </a>
+</div>

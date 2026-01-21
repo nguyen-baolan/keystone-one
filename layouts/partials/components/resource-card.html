@@ -1,0 +1,54 @@
+{{/*
+  Resource Card Component
+  
+  Displays: title, resource_type, summary, reading_time, audience
+  All fields are optional except title
+*/}}
+<div class="resource-card bg-body dark:bg-darkmode-body">
+  {{ $image := .Params.card_image | default .Params.image }}
+  {{ if $image }}
+    <a href="{{ .RelPermalink }}">
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
+    </a>
+  {{ end }}
+  
+  {{ with .Params.parent_resource }}
+    {{ $parent := site.GetPage (printf "resources/%s" .) }}
+    {{ if $parent }}
+      <p class="mb-2 text-sm text-text-light dark:text-darkmode-text-light">
+        Part of <a class="underline hover:text-primary" href="{{ $parent.RelPermalink }}">{{ $parent.Title }}</a>
+      </p>
+    {{ end }}
+  {{ end }}
+
+  <div class="mb-3 flex items-center gap-3">
+    {{ with .Params.resource_type }}
+      <span class="inline-block rounded bg-primary/10 px-2.5 py-0.5 text-xs font-medium uppercase text-primary dark:bg-darkmode-primary/10 dark:text-darkmode-primary">
+        {{ . }}
+      </span>
+    {{ end }}
+    {{ with .Params.reading_time }}
+      <span class="text-xs text-text-light dark:text-darkmode-text-light">
+        {{ . }} read
+      </span>
+    {{ end }}
+  </div>
+
+  <h4 class="mb-3">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h4>
+
+  {{ with .Params.summary }}
+    <p class="resource-card-summary mb-2 text-sm">
+      {{ . | markdownify }}
+    </p>
+  {{ end }}
+
+  {{ with .Params.audience }}
+    <p class="resource-card-audience mb-6 text-sm">
+      <span class="font-semibold">Audience:</span> {{ . | markdownify }}
+    </p>
+  {{ end }}
+
+  <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">Read resource</a>
+</div>

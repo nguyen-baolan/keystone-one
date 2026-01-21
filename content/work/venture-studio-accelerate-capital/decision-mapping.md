@@ -1,7 +1,7 @@
 ---
-title: "Decision mapping process"
-meta_title: "Decision mapping process"
-description: "How we mapped and optimized decision frameworks for investment workflows."
+title: "Decision mapping deep dive"
+meta_title: "Decision mapping deep dive"
+description: "How we started with process mapping to bring structure, clarity, and confidence to investment decisions before introducing any AI or tooling."
 
 aliases:
   # Preserve the previously-published deep-dive URL
@@ -9,8 +9,9 @@ aliases:
 
 # Used by /work/ card grid (if you want this to show up in work listing)
 parent_case: "venture-studio-accelerate-capital"
-challenge: "Complex investment decisions needed clear frameworks and systematic approaches."
-solution: "Structured decision mapping methodology to optimize investment workflows."
+challenge: "High-stakes investment decisions were slowed down by unclear processes, inconsistent evidence, and informal decision-making."
+solution: "A structured, end-to-end decision mapping exercise that made investment decisions explicit, repeatable, and ready for augmentation."
+reading_time: "15 min"
 
 # Optional media
 image: "/images/decision-map-1.jpg"
@@ -61,29 +62,43 @@ This is the work that makes later implementation possiblebecause you cannot aut
 
 ---
 
-## How we ran the mapping work (methodical, not theoretical)
+## Why we always start with process, not technology
 
-We ran a structured sequence with the client team:
+When executives ask how AI can help them make better decisions, our first response is usually uncomfortable but necessary.
 
-1. **Decision inventory**: what decisions recur, what triggers them, and what good looks like.
-2. **Artifact review**: memos, spreadsheets, IC notes, email threadswhat actually drives a decision in practice.
-3. **Stakeholder walkthroughs**: step-by-step replay of recent deals to surface hidden steps and informal criteria.
-4. **Gate definition**: convert opinions into **explicit criteria** (minimum evidence, owner, and outputs).
-5. **Exception handling**: identify where reality breaks the happy path and define how to respond.
-6. **Sign-off and adoption**: align leadership on the map, then translate it into templates and routines.
+Before discussing models, agents, or automation, we need to understand how decisions are actually made today.
 
-### Difficulties we had to overcome (and how we handled them)
+In fast-moving investment environments, most problems do not come from a lack of intelligence or data. They come from unclear decision rights, shifting criteria, and hidden assumptions that only surface when things go wrong.
 
-- **Different meanings of fit.** Teams used the same word to mean different things (strategic fit, founder fit, timeline fit). We introduced a shared vocabulary and broke fit into explicit gates.
-- **Inconsistent evidence quality.** Some deals had strong data; others relied on narrative momentum. We defined a minimum evidence pack and an assumptions register to separate facts from beliefs.
-- **Decision rights drift.** In fast cycles, decisions were sometimes made by whoever was in the room. We clarified owners per gate and created a decision log so choices had continuity.
-- **Time pressure vs. diligence depth.** We designed revision loops and stop rules to prevent sunk-cost escalation while keeping velocity.
+This deep dive shows how we worked with a venture studio to map their investment decision process end to end, long before introducing any AI workflows. The objective was simple: make the decision process visible, testable, and improvable.
+
+Only then does technology have a place.
+
+If you want the broader engagement context, refer to the parent case study:
+[Enabling a Venture Studio to Accelerate Capital Allocations](/work/venture-studio-accelerate-capital/)
 
 ---
 
-## Phase 1  Market and problem framing
+## How we ran the mapping with the client
 
-Phase 1 ensures the team is answering the *right* investment questionbefore diligence expands.
+We did not arrive with a predefined framework or a theoretical model. Instead, we worked directly from how the client already operated.
+
+Together with the investment and venture teams, we replayed recent deals step by step. We looked at what triggered decisions, what information was used, who influenced outcomes, and where disagreements appeared.
+
+From this work, we structured the process into four clear phases, each with its own purpose, outputs, and decision gates:
+
+1. Market and problem framing  
+2. Commercial diligence  
+3. Technical and operational diligence  
+4. Investment case and structuring  
+
+What follows is a walkthrough of each phase, with concrete examples of how the mapped process was used in practice.
+
+---
+
+## Phase 1. Market and problem framing
+
+Phase 1 is about deciding whether an opportunity deserves serious time and attention.
 
 ```mermaid
 flowchart TD
@@ -91,7 +106,6 @@ flowchart TD
  B --> C{"Fit and priority gate"}
  C -- "No or defer" --> C1["Backlog or parked"]
  C -- "Yes" --> D["Frame the investment question"]
-
 
  subgraph P1["Phase 1 - Market and problem framing"]
    direction LR
@@ -102,19 +116,26 @@ flowchart TD
    D4 --> D5["Evidence pack: sources log / assumptions register"]
  end
 
-
  D5 --> E{"Thesis gate"}
  E -- "Revise" --> D1
  E -- "Proceed" --> F["Venture team setup and workplan"]
 ```
+**What we illustrated in practice**
 
-**What this phase changed for leadership:** fewer interesting ideas entering diligence, and more clarity on what needs to be true for a deal to earn time.
+The client already knew what a strong Phase 1 output looked like. They had examples of good memos and clear conclusions. What they did not have was a shared, explicit path to get there.
+
+We helped them reverse engineer the reasoning step by step. Instead of asking whether AI could generate a market thesis, we mapped how humans actually formed one.
+
+A key insight was around overfitting reasoning. If an AI system is asked to identify customer pain points or willingness to pay, it will always find some. It is complying with the instruction, not validating reality.
+
+That is why simply prompting for answers could not work.
+
+By making each step explicit, such as separating hypotheses from evidence and assumptions from facts, we were able to design a workflow that constrained reasoning rather than amplifying bias. The process map became the guardrail that later prevented AI from confidently producing the wrong answer.
 
 ---
 
-## Phase 2  Commercial diligence
-
-Phase 2 tests whether the opportunity can become a real businesswithout overbuilding a narrative.
+## Phase 2. Commercial diligence
+Phase 2 tests whether the opportunity can sustain a real business, not just a compelling story.
 
 ```mermaid
 flowchart TD
@@ -122,7 +143,6 @@ flowchart TD
  D5["Evidence pack: sources log / assumptions register"] --> E{"Thesis gate"}
  E -- "Revise" --> D1["Thesis hypothesis: why now / why us / why this"]
  E -- "Proceed" --> F["Venture team setup and workplan"]
-
 
  subgraph P2["Phase 2 - Commercial diligence"]
    direction LR
@@ -133,20 +153,29 @@ flowchart TD
    F4 --> F5["Commercial headwinds / tailwinds register: mitigations / leading indicators"]
  end
 
-
  F5 --> G{"Commercial gate"}
  G -- "Stop" --> G1["Stop or learnings captured"]
  G -- "Iterate" --> F2
  G -- "Proceed" --> H["Technical and operational diligence"]
 ```
 
-**Where we were strict:** the iterate loop had to result in *new evidence*, not stronger opinions. This prevented the team from re-litigating the same debate.
+**What we illustrated in practice**
+
+Much of the input in this phase came from stakeholder interviews. This is where we deliberately hit the boundary between full autonomy and team collaboration.
+
+Interviewing customers, partners, or operators was not delegated to AI. It required experienced interviewers who could probe, challenge, and read context.
+
+AI supported everything around that human work. It helped build stakeholder profiles, identify who to speak to, find contact information, and generate targeted interview guides for each role.
+
+After interviews were conducted, humans provided structured notes back into the system. Only then did AI assist with synthesis, pattern detection, and comparison across interviews.
+
+The mapped process made this handoff explicit. Everyone knew where human judgment was required and where automation could accelerate without distorting reality.
 
 ---
 
-## Phase 3  Technical and operational diligence
+## Phase 3. Technical and operational diligence
 
-This phase turns a promising commercial case into an executable plan, without drifting into premature architecture.
+This phase answers a different question: can this be built and operated in a credible way.
 
 ```mermaid
 flowchart TD
@@ -155,7 +184,6 @@ flowchart TD
  G -- "Stop" --> G1["Stop or learnings captured"]
  G -- "Iterate" --> F2["Problem-solution validation: use cases / switching costs / value drivers"]
  G -- "Proceed" --> H["Technical and operational diligence"]
-
 
  subgraph P3["Phase 3 - Technical and operational diligence"]
    direction LR
@@ -166,27 +194,29 @@ flowchart TD
    H4 --> H5["Ops and scalability: hypothesis to validate / progress monitoring"]
  end
 
-
  H5 --> I{"Feasibility gate"}
  I -- "Revise scope" --> H3
  I -- "Proceed" --> J["Financial model and value creation plan"]
 ```
+**What we illustrated in practice**
 
-**Exception case we handled explicitly:** when feasibility risk was high but strategic upside was real, we created a scoped learn-fast path (revise scope) instead of forcing an approve/reject decision too early.
+At this stage, trust in the analysis becomes critical. Simple language models tend to summarize and agree. That is not what leadership needs when assessing feasibility and risk.
+
+We introduced structured reasoning and adversarial debate. Instead of producing a single answer, the system was required to challenge assumptions, surface contradictions, and argue alternative interpretations before converging on a conclusion.
+
+This was only possible because the process map defined what a valid challenge looked like and where it should occur. The output was not just a recommendation, but a documented reasoning path that teams could interrogate and trust.
 
 ---
 
-## Phase 4  Investment case and structuring (with controls that persist post-investment)
+## Phase 4. Investment case and structuring
 
-Phase 4 is where leadership needs confidence: the case is coherent, the risks are visible, and the execution path is owned.
-
+Phase 4 is where leadership commits capital, time, and reputation.
 ```mermaid
 flowchart TD
 
  H5["Ops and scalability: hypothesis to validate / progress monitoring"] --> I{"Feasibility gate"}
  I -- "Revise scope" --> H3["Delivery feasibility: roadmap / resourcing / dependencies"]
  I -- "Proceed" --> J["Financial model and value creation plan"]
-
 
  subgraph P4["Phase 4 - Investment case and structuring"]
    direction LR
@@ -197,12 +227,10 @@ flowchart TD
    J4 --> J5["IC memo: narrative / top risks / mitigations / kill criteria"]
  end
 
-
  J5 --> K{"Approval gate"}
  K -- "Reject" --> K1["Reject and rationale archived"]
  K -- "Defer" --> C1["Backlog or parked"]
  K -- "Approve" --> L["Execute: close / onboard / activate plan"]
-
 
  subgraph P5["Phase 5 - Post-investment execution"]
    direction LR
@@ -214,7 +242,6 @@ flowchart TD
    L3 -- "Exit readiness" --> M["Exit prep and outcomes narrative"]
  end
 
-
  subgraph X["Cross-cutting controls"]
    direction TB
    X1["Evidence log and citations"]
@@ -224,7 +251,6 @@ flowchart TD
    X5["Risk register and mitigations"]
  end
 
-
  D5["Evidence pack: sources log / assumptions register"] -.-> X1
  D1["Thesis hypothesis: why now / why us / why this"] -.-> X2
  F1["Stakeholder outreach: stakeholder calls"] -.-> X4
@@ -232,26 +258,48 @@ flowchart TD
  J5 -.-> X3
  L3 -.-> X3
 
-
  M --> N["Lessons learned to playbook updates"]
  N -.-> B["Intake and qualification"]
 ```
+**What we illustrated in practice**
 
-**Why the controls matter:** the client didnt just need a better decision in the momentthey needed a way to explain decisions internally, learn from them, and improve the system over time.
+This is where we hit the hard limits of language models.
 
----
+Unit economics, scenario analysis, and sensitivities require math. Large language models are unreliable at arithmetic and compounding effects, especially under scenario stress.
 
-## What leadership got out of this
+We combined programmatic financial modeling with reasoning models. Quantitative calculations were handled deterministically. Reasoning models interpreted results, challenged assumptions, and translated implications for decision makers.
 
-- **Clarity:** what the process is, where it loops, and what done means at each gate
-- **Confidence:** decisions are grounded in an explicit evidence standard and captured rationale
-- **Speed without chaos:** time-boxed phases, revision loops, and clear stop criteria
-- **A foundation for execution:** the map becomes the reference for templates, routines, and any future tooling
-
-If youd like to see how this mapping work supported the broader engagement, return to the parent case: **[Enabling a Venture Studio to Accelerate Capital Allocations](/work/venture-studio-accelerate-capital/)**.
+Because the process map clearly separated calculation from interpretation, the outputs were both numerically sound and explainable at an executive level.
 
 ---
 
-### Note on scope
+## What the client got out of this
 
-This page intentionally focuses on **process and decision design**. We avoided detailed technical architecture until the decision criteria and evidence standards were stable.
+By the end of the mapping exercise, the client had:
+A shared, explicit view of how investment decisions are made
+Clear gates with defined owners, inputs, and outputs
+Fewer debates driven by opinion and more decisions grounded in evidence
+Faster cycles without sacrificing rigor
+A solid foundation to introduce AI without amplifying existing flaws
+
+Most importantly, leadership gained confidence that decisions could be explained, revisited, and improved over time.
+
+---
+
+## Why process mapping changed everything
+
+Process mapping gave us a deep understanding of how the business actually works. It revealed where reasoning matters, where quantitative rigor matters, and where humans must stay in the loop.
+
+Only after this work did it make sense to design AI workflows that combined reasoning models, adversarial techniques, and quantitative modeling in a way that served the business.
+
+Starting with technology would have missed all of this.
+
+---
+
+## What we did not cover here
+
+This deep dive focused on decision and process design. We intentionally did not cover how we ensured auditability and replayability of the workflows.
+TO-DO
+Deep dive on auditability, replayability, and decision traceability
+
+---

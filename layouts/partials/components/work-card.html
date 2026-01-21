@@ -17,6 +17,12 @@
     {{ end }}
   {{ end }}
 
+  {{ with .Params.reading_time }}
+    <p class="mb-3 text-xs text-text-light dark:text-darkmode-text-light">
+      {{ . }} read
+    </p>
+  {{ end }}
+
   <h4 class="mb-3">
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   </h4>
@@ -28,8 +34,14 @@
   {{ end }}
 
   {{ with .Params.solution }}
-    <p class="work-card-solution mb-6 text-sm">
+    <p class="work-card-solution mb-2 text-sm">
       <span class="font-semibold">Solution:</span> {{ . | markdownify }}
+    </p>
+  {{ end }}
+
+  {{ with .Params.audience }}
+    <p class="work-card-audience mb-6 text-sm">
+      <span class="font-semibold">Audience:</span> {{ . | markdownify }}
     </p>
   {{ end }}
 
