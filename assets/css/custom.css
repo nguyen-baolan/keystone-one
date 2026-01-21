@@ -100,3 +100,50 @@
 .author-card-footer {
   @apply pt-2;
 }
+
+/* Featured Work Compact Cards - sized for swiper */
+.work-card-compact {
+  @apply flex flex-col h-full;
+  max-height: 550px; /* Slightly larger than testimonials to accommodate images */
+}
+
+.work-card-compact .block.mb-6 {
+  @apply mb-4; /* Reduce image bottom margin */
+}
+
+.work-card-compact h3 {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  min-height: 2.5rem; /* Maintain consistent title height */
+}
+
+.work-card-compact .work-card-challenge,
+.work-card-compact .work-card-solution {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* Large screens: Allow more lines for better readability */
+@media (min-width: 1024px) {
+  .work-card-compact .work-card-challenge,
+  .work-card-compact .work-card-solution {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+.work-card-compact .btn {
+  @apply mt-auto;
+}
+
+/* Featured work swiper specific adjustments */
+.featured-work-slider .swiper-slide {
+  height: auto;
+  display: flex;
+}

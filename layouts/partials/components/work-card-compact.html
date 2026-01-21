@@ -1,0 +1,44 @@
+{{/*
+  Compact work card for swiper slides.
+  Optimized for smaller containers with consistent aspect ratio.
+*/}}
+<div class="work-card-compact bg-light dark:bg-darkmode-light rounded-lg px-4 py-6">
+  {{ $image := .Params.card_image | default .Params.image }}
+  {{ if $image }}
+    <a href="{{ .RelPermalink }}" class="block mb-6">
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded aspect-video object-cover") }}
+    </a>
+  {{ end }}
+
+  {{ with .Params.parent_case }}
+    {{ $parent := site.GetPage (printf "work/%s" .) }}
+    {{ if $parent }}
+      <p class="mb-2 text-xs text-text-light dark:text-darkmode-text-light uppercase tracking-wide">
+        Part of {{ $parent.Title }}
+      </p>
+    {{ end }}
+  {{ end }}
+
+  <h3 class="h5 font-primary font-semibold mb-4">
+    <a href="{{ .RelPermalink }}" class="hover:text-primary">{{ .Title }}</a>
+  </h3>
+
+  {{ with .Params.challenge }}
+    <p class="work-card-challenge mb-3 text-sm">
+      <span class="font-semibold text-text-dark dark:text-darkmode-text-dark">Challenge:</span> 
+      <span class="text-text dark:text-darkmode-text">{{ . | markdownify }}</span>
+    </p>
+  {{ end }}
+
+  {{ with .Params.solution }}
+    <p class="work-card-solution mb-6 text-sm">
+      <span class="font-semibold text-text-dark dark:text-darkmode-text-dark">Solution:</span> 
+      <span class="text-text dark:text-darkmode-text">{{ . | markdownify }}</span>
+    </p>
+  {{ end }}
+
+  <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
+    Read case study
+    <i class="fa fa-arrow-right pl-1"></i>
+  </a>
+</div>

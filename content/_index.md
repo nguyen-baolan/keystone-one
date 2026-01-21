@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "We help leadership teams turn AI ambitions into measurable ROI."
+  title: "Turn your AI ambitions into measurable ROI."
   content: ""
   image: "/images/keystone-hero-banner.jpg"
   # Optional hero background video
@@ -19,41 +19,43 @@ banner:
 features:
   - title: "What we help you achieve"
     image: "/images/service-4.png"
-    content: "We partner with senior leaders to move AI beyond pilots—into decision-making and operations—so it reliably reduces friction, accelerates decisions, and unlocks capacity."
+    content: "We'll help you unlock hidden enteprise value by implementing AI in workflows that drive ROI."
     bulletpoints:
-      - "Clarity on where AI should—and should not—be applied"
-      - "A prioritized roadmap tied to business value and feasibility"
-      - "Production systems that teams actually use"
-      - "Governance and risk alignment for complex or regulated environments"
-      - "Internal capability to operate and evolve what we ship"
+      - "Reduce operational costs, drive new revenue streams or scale capabilities to produce more with less resources"
+      - "Quantify AI ROI in ways that stand CFO scrutiny"
+      - "Get guidance on when it makes sense to buy or build"
+      - "Gain clarity on what the transition to an AI-org could look like"
+      - "Get AI workflows in production quickly to get value within the first 100 days"
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
 
-  - title: "AI readiness and capability assessment"
+  - title: "How we work with clients"
     image: "/images/service-5.png"
-    content: "A senior-led assessment of your AI maturity, operating constraints, and data reality—followed by a shortlist of value-aligned use cases and a clear path to delivery."
+    content: "We'll partner with you to assess your AI readiness, prioritize and quantify use cases that can unlock most value from AI and provide you with a clear transformation roadmap."
     bulletpoints:
-      - "Identify high-value, feasible use cases (not a long list of ideas)"
+      - "Prioritize use cases with high-value but short time-to-delivery"
       - "Define ownership, success criteria, and delivery sequence"
       - "Surface governance, risk, and adoption blockers early"
+      - "Co-design AI workflows that can evolve at the pace of your organization"
     button:
       enable: false
       label: ""
       link: ""
 
-  - title: "Operating model design and execution"
+  - title: "We commit to deliver value within 100 days"
     image: "/images/service-6.png"
-    content: "Most AI initiatives stall because they’re disconnected from business ownership and operating reality. We redesign workflows and governance so AI can be embedded safely and adopted.
-    "
+    content: ""
     bulletpoints:
-      - "Define how AI fits into decisions and day-to-day work"
-      - "Align governance, risk, and accountability with leadership"
-      - "Build and integrate production-grade systems (not experiments)"
-      - "Deploy, onboard, and hand over to internal teams"
+      - "First 30 days: prioritize use cases, quantify ROI, align with leadership and ops team"
+      - "Next 30 days: ship the first usable AI workflows, get feedback from operations and iterate"
+      - "Next 30 days: ship several iterations based on feedback, continuously assess value created"
+      - "Last 10 days: review and decide to pivot, kill or scale AI capabilities"
     button:
-      enable: false
-      label: ""
-      link: ""
+      enable: true
+      label: "Contact us now to get started"
+      link: "/contact"
+
+
 ---

@@ -21,4 +21,26 @@
       },
     },
   });
+
+  // Featured Work Slider
+  // ----------------------------------------
+  new Swiper(".featured-work-slider", {
+    spaceBetween: 24,
+    loop: false,
+    pagination: {
+      el: ".featured-work-slider-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 32,
+      },
+    },
+  });
 })();
