@@ -36,3 +36,6 @@ hugo_stats.json
 
 # Logs
 *.log
+
+# include content folder that may contain some ignored keywords such as 'resources'
+!content/**
