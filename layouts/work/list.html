@@ -70,8 +70,11 @@
 
             <h1 class="h2 mb-6">{{ .Title }}</h1>
 
+            {{/* Case study metadata - chip-style labels */}}
+            {{ partial "components/meta-chips" . }}
+
             {{/*
-              Optional rich layout sections (mirrors the homepage features layout).
+              Optional rich layout sections (mirrors the homepage features layout).
 
               Content schema (front matter):
                 sections:

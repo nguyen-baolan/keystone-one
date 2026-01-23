@@ -12,6 +12,8 @@ challenge: "Capital allocation decisions were slow, inconsistent, and difficult 
 solution: "A standardized decision workflow with clear inputs/outputs, scoring, and review gates."
 audience: "CEO, CFO, Investment Committee, Venture Studio Leadership"
 reading_time: "8 min"
+engagement_type: "Implementation & Strategy"
+industry: "Venture Capital"
 
 # Optional media
 image: "/images/venture-team.jpg"

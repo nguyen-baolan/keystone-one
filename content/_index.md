@@ -1,15 +1,15 @@
 ---
 # Banner
 banner:
-  title: "Turn your AI ambitions into measurable ROI."
-  content: ""
+  title: "Turn your AI ambitions into measurable ROI"
+  content: "For non-tech companies who want to grow EBITDA without adding more resources."
   image: "/images/keystone-hero-banner.jpg"
   # Optional hero background video
   video:
     enabled: true
     src: "/videos/keystone-hero-banner.mp4"     # mp4 file under /static/videos/
     poster: "/images/keystone-hero-banner.png" # optional
-    force_mobile: false          # default false: use image on mobile
+    force_mobile: true          # default false: use image on mobile
   button:
     enable: true
     label: "Contact us"
