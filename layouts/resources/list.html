@@ -1,0 +1,178 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section">
+    <div class="container">
+      {{/*
+        Pattern A (Resource hub + deep-dive pages)
+
+        - /resources/ should list RESOURCE HUBS (section pages under resources/).
+        - /resources/<resource>/ should render as a hub page (not a grid of children).
+      */}}
+
+      {{/*
+        Identify the top-level /resources/ list page.
+        Using .FirstSection is more robust than hardcoding "/resources/" and is future-proof for baseURL/language prefixes.
+      */}}
+      {{ $isResourcesRoot := and .FirstSection (eq .RelPermalink .FirstSection.RelPermalink) }}
+
+      {{ if $isResourcesRoot }}
+        <div class="row">
+          {{/*
+            List all resources (top-level resource hubs + deep dives) in the same grid.
+
+            - Top-level resource hubs: .Sections
+            - Deep dives: RegularPages inside each resource hub
+
+            Deep dives are expected to have:
+              parent_resource: "<top-resource-slug>"
+            Resource card will render the parent reference when present.
+          */}}
+
+          {{ $resources := .Sections }}
+          {{ $deepDives := slice }}
+          {{ range $resources }}
+            {{ $deepDives = $deepDives | append (where .RegularPages "Params.draft" false) }}
+          {{ end }}
+
+          {{/*
+            Merge and sort.
+
+            We want to preserve a stable order:
+            1) by Weight (when set)
+            2) then by Title
+
+            Note: Hugo's sort is stable, so we sort by Title first, then Weight.
+          */}}
+          {{ $all := $resources | append $deepDives }}
+          {{ $all = sort $all "Title" "asc" }}
+          {{ $all = sort $all "Weight" "asc" }}
+
+          {{ $paginator := .Paginate $all }}
+          {{ range $paginator.Pages }}
+            <div class="col-12 md:col-6 lg:col-4 mb-8">
+              {{ partial "components/resource-card" . }}
+            </div>
+          {{ end }}
+        </div>
+
+        {{ partial "components/pagination.html" . }}
+      {{ else }}
+        {{/* Resource hub page */}}
+        <div class="row justify-center">
+          <article class="lg:col-10">
+            {{ $image := .Params.image }}
+            {{ if $image }}
+              <div class="mb-10">
+                {{/* Use Hugo asset pipeline when possible */}}
+                {{ $imgPath := strings.TrimPrefix "/" $image }}
+                {{ with resources.Get $imgPath }}
+                  <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="w-full rounded" />
+                {{ else }}
+                  <img src="{{ $image | relURL }}" alt="{{ $.Title }}" class="w-full rounded" />
+                {{ end }}
+              </div>
+            {{ end }}
+
+            <h1 class="h2 mb-6">{{ .Title }}</h1>
+
+            {{/* Resource metadata - chip-style labels */}}
+            {{ partial "components/meta-chips" . }}
+
+            {{/*
+              Optional rich layout sections (mirrors the homepage features layout).
+
+              Content schema (front matter):
+                sections:
+                  - title: "..."
+                    image: "/images/...png"
+                    content: "..."        # markdown supported
+                    bulletpoints:         # optional
+                      - "..."
+            */}}
+            {{ with .Params.sections }}
+              <div class="mb-10">
+                {{ range $i, $s := . }}
+                  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+                    <div class="container px-0">
+                      <div class="row items-center justify-between">
+                        <div class="mb:md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
+                          {{ with $s.image }}
+                            {{ $sectionImg := . }}
+                            {{ $sectionImgPath := strings.TrimPrefix "/" $sectionImg }}
+                            {{ with resources.Get $sectionImgPath }}
+                              <img src="{{ .RelPermalink }}" alt="section image" class="w-full rounded" />
+                            {{ else }}
+                              <img src="{{ $sectionImg | relURL }}" alt="section image" class="w-full rounded" />
+                            {{ end }}
+                          {{ end }}
+                        </div>
+                        <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+                          {{ with $s.title }}
+                            <h2 class="mb-4">{{ . | markdownify }}</h2>
+                          {{ end }}
+                          {{ with $s.content }}
+                            <p class="mb-8 text-lg">{{ . | markdownify }}</p>
+                          {{ end }}
+                          {{ with $s.bulletpoints }}
+                            <ul>
+                              {{ range . }}
+                                <li class="relative mb-4 pl-6">
+                                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                                  {{ . | markdownify }}
+                                </li>
+                              {{ end }}
+                            </ul>
+                          {{ end }}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                {{ end }}
+              </div>
+            {{ end }}
+
+            <div class="content mb-10">
+              {{/* Keep TOC for readability on long resources */}}
+              {{ with .TableOfContents }}
+                <div class="toc mb-6">
+                  <h3 class="text-lg font-semibold mb-2">Table of Contents</h3>
+                  {{ . }}
+                </div>
+              {{ end }}
+              {{ .Content }}
+            </div>
+
+            {{/* Optional download link if available */}}
+            {{ with .Params.download_url }}
+              <div class="mb-10 rounded border border-border p-6 dark:border-darkmode-border">
+                <h3 class="mb-3 text-lg font-semibold">Download this resource</h3>
+                <a class="btn btn-primary" href="{{ . }}" download>
+                  <i class="fa fa-download mr-2"></i>Download
+                </a>
+              </div>
+            {{ end }}
+
+            {{/* Deep dives (regular pages inside the resource folder) */}}
+            {{ $dives := where .RegularPages "Params.draft" false }}
+            {{ if gt (len $dives) 0 }}
+              <section class="section pt-0">
+                <div class="container px-0">
+                  <h2 class="h3 mb-8">Deep dives</h2>
+
+                  <div class="row">
+                    {{ range $dives.ByWeight }}
+                      <div class="col-12 md:col-6 lg:col-4 mb-8">
+                        {{ partial "components/resource-card" . }}
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              </section>
+            {{ end }}
+          </article>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

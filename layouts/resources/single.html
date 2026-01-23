@@ -1,0 +1,101 @@
+{{ define "main" }}
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          {{/* Deep-dive back navigation */}}
+          {{ with .Params.parent_resource }}
+            {{ $hub := site.GetPage (printf "resources/%s" .) }}
+            {{ if $hub }}
+              <div class="mb-6">
+                <a class="btn btn-outline-primary btn-sm" href="{{ $hub.RelPermalink }}">← Back to resource hub</a>
+              </div>
+            {{ end }}
+          {{ end }}
+
+          {{/* Hero image */}}
+          {{ $image := .Params.image }}
+          {{ if $image }}
+            <div class="mb-10">
+              {{ $imgPath := strings.TrimPrefix "/" $image }}
+              {{ with resources.Get $imgPath }}
+                <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="w-full rounded" />
+              {{ else }}
+                <img src="{{ $image | relURL }}" alt="{{ .Title }}" class="w-full rounded" />
+              {{ end }}
+            </div>
+          {{ end }}
+
+          <h1 class="h2 mb-6">{{ .Title }}</h1>
+
+          {{/* Resource metadata - chip-style labels */}}
+          {{ partial "components/meta-chips" . }}
+
+          {{/* Optional rich layout sections (mirrors the homepage "features" layout) */}}
+          {{ with .Params.sections }}
+            <div class="mb-10">
+              {{ range $i, $s := . }}
+                <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+                  <div class="container px-0">
+                    <div class="row items-center justify-between">
+                      <div class="mb:md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
+                        {{ with $s.image }}
+                          {{ $sectionImg := . }}
+                          {{ $sectionImgPath := strings.TrimPrefix "/" $sectionImg }}
+                          {{ with resources.Get $sectionImgPath }}
+                            <img src="{{ .RelPermalink }}" alt="section image" class="w-full rounded" />
+                          {{ else }}
+                            <img src="{{ $sectionImg | relURL }}" alt="section image" class="w-full rounded" />
+                          {{ end }}
+                        {{ end }}
+                      </div>
+                      <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+                        {{ with $s.title }}
+                          <h2 class="mb-4">{{ . | markdownify }}</h2>
+                        {{ end }}
+                        {{ with $s.content }}
+                          <p class="mb-8 text-lg">{{ . | markdownify }}</p>
+                        {{ end }}
+                        {{ with $s.bulletpoints }}
+                          <ul>
+                            {{ range . }}
+                              <li class="relative mb-4 pl-6">
+                                <i class="fa fa-check absolute left-0 top-1.5"></i>
+                                {{ . | markdownify }}
+                              </li>
+                            {{ end }}
+                          </ul>
+                        {{ end }}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              {{ end }}
+            </div>
+          {{ end }}
+
+          <div class="content mb-10">
+            {{/* TOC for readability on long resources */}}
+            {{ with .TableOfContents }}
+              <div class="toc mb-6">
+                <h3 class="text-lg font-semibold mb-2">Table of Contents</h3>
+                {{ . }}
+              </div>
+            {{ end }}
+            {{ .Content }}
+          </div>
+
+          {{/* Download link if available */}}
+          {{ with .Params.download_url }}
+            <div class="mb-10 rounded border border-border p-6 dark:border-darkmode-border">
+              <h3 class="mb-3 text-lg font-semibold">Download this resource</h3>
+              <a class="btn btn-primary" href="{{ . }}" download>
+                <i class="fa fa-download mr-2"></i>Download
+              </a>
+            </div>
+          {{ end }}
+        </article>
+      </div>
+    </div>
+  </section>
+{{ end }}
