@@ -51,6 +51,24 @@
   {{ end }}
   <!-- /Banner -->
 
+  <!-- USP Section -->
+  {{ with .Params.USP }}
+    {{ if .enable }}
+      <section class="section-sm">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-8 text-center">
+              <p class="text-xl text-text-dark dark:text-darkmode-text-dark">
+                {{ .title | markdownify }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- /USP Section -->
+
   <!-- Client Logo Carousel -->
   {{ with .Params.clients }}
     {{ if .enable }}
@@ -79,24 +97,6 @@
     {{ end }}
   {{ end }}
   <!-- /Client Logo Carousel -->
-
-  <!-- USP Section -->
-  {{ with .Params.USP }}
-    {{ if .enable }}
-      <section class="section-sm">
-        <div class="container">
-          <div class="row justify-center">
-            <div class="lg:col-8 text-center">
-              <p class="text-xl text-text-dark dark:text-darkmode-text-dark">
-                {{ .title | markdownify }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    {{ end }}
-  {{ end }}
-  <!-- /USP Section -->
 
   <!-- AI Value Creation Manifesto -->
   {{ with .Params.manifesto }}
