@@ -3,11 +3,14 @@
   {{ with .Params.banner }}
     {{ $video := .video }}
     <section class="relative overflow-hidden flex items-center py-10 md:py-16 lg:py-24 md:min-h-[40vh] lg:min-h-[50vh]">
-      {{ if and $video $video.enabled $video.src }}
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-0">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "w-full h-full object-cover" ) }}
-          </div>
+      <!-- Background Image (Always shown) -->
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0">
+          {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "w-full h-full object-cover" ) }}
+        </div>
+        
+        <!-- Video Layer (Only when enabled) -->
+        {{ if and $video $video.enabled $video.src }}
           <video
             class="absolute inset-0 w-full h-full object-cover {{ if not $video.force_mobile }}hidden md:block{{ end }}"
             autoplay
@@ -17,9 +20,11 @@
             {{ with $video.poster }}poster="{{ . }}"{{ end }}>
             <source src="{{ $video.src | relURL }}" type="video/mp4" />
           </video>
-          <div class="absolute inset-0 bg-body/70 dark:bg-darkmode-body/70"></div>
-        </div>
-      {{ end }}
+        {{ end }}
+        
+        <!-- Overlay for text readability -->
+        <div class="absolute inset-0 bg-body/70 dark:bg-darkmode-body/70"></div>
+      </div>
 
       <div class="container">
         <div class="row justify-center items-center">
@@ -41,14 +46,6 @@
             {{ end }}
           </div>
         </div>
-
-        {{ if not (and $video $video.enabled $video.src) }}
-          <div class="row justify-center mt-10">
-            <div class="col-12">
-              {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
-            </div>
-          </div>
-        {{ end }}
       </div>
     </section>
   {{ end }}
