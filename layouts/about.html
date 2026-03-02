@@ -1,35 +1,134 @@
 {{ define "main" }}
-  <section class="section-sm">
-    <div class="container">
-      <div class="row justify-start">
-        <div class="md:col-12 lg:col-10 text-left">
-          {{ with .Params.image }}
-            {{ partial "image" (dict "Src" . "Context" $.Page "Alt" $.Title "Class" "mx-auto mb-6" "Size" "200x200") }}
-          {{ end }}
-          <h2 class="h3 mb-6">{{ .Title }}</h2>
-          <div class="content">{{ .Content }}</div>
+  <!-- Hero Section -->
+  {{ with .Params.hero }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10 text-center">
+            <h1 class="mb-4">{{ .title | markdownify }}</h1>
+            <p class="text-xl text-text-dark dark:text-darkmode-text-dark mb-4">
+              {{ .subtitle | markdownify }}
+            </p>
+            <p class="text-lg text-primary font-medium">
+              {{ .locations | markdownify }}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  {{ end }}
 
-  {{/* Team section: reuse existing authors content + author-card component */}}
-  <section class="section pt-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 mb-10 text-left">
-          <h2 class="h3">Team</h2>
+  <!-- Introduction -->
+  {{ with .Content }}
+    <section class="section-sm bg-light dark:bg-darkmode-light">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="content text-center text-lg">
+              {{ . }}
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        {{ with site.GetPage "authors" }}
-          {{ range .RegularPages.ByWeight }}
-            <div class="col-12 md:col-6 lg:col-4 mb-8">
-              {{ partial "components/author-card" . }}
+    </section>
+  {{ end }}
+
+  <!-- Keystone Philosophy -->
+  {{ with .Params.philosophy }}
+    <section class="section">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">The Keystone Philosophy</h2>
+          </div>
+        </div>
+        <div class="row gy-8">
+          {{ range . }}
+            <div class="col-12">
+              <div class="p-8 rounded-lg bg-light dark:bg-darkmode-light">
+                <div class="flex items-start mb-4">
+                  <span class="text-4xl mr-4">{{ .icon }}</span>
+                  <h3 class="h3 mt-2">{{ .title | markdownify }}</h3>
+                </div>
+                <div class="content text-lg">
+                  {{ .content | markdownify }}
+                </div>
+              </div>
             </div>
           {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Team Section -->
+  {{ with .Params.team }}
+    <section class="section bg-gradient">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          </div>
+        </div>
+
+        <!-- Lead -->
+        {{ with .lead }}
+          <div class="row justify-center mb-12">
+            <div class="lg:col-8">
+              <div class="p-8 rounded-lg bg-body dark:bg-darkmode-body">
+                <h3 class="h3 mb-2">{{ .name | markdownify }}</h3>
+                <p class="text-primary font-medium mb-4">{{ .title | markdownify }}</p>
+                <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                  {{ .bio | markdownify }}
+                </p>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+
+        <!-- Approach -->
+        {{ with .approach }}
+          <div class="row justify-center">
+            <div class="lg:col-10">
+              <div class="p-8 rounded-lg bg-body dark:bg-darkmode-body">
+                <h3 class="h3 mb-4 text-center">{{ .title | markdownify }}</h3>
+                <div class="content text-lg">
+                  {{ .content | markdownify }}
+                </div>
+              </div>
+            </div>
+          </div>
         {{ end }}
       </div>
-    </div>
-  </section>
+    </section>
+  {{ end }}
+
+  <!-- Global Presence -->
+  {{ with .Params.presence }}
+    <section class="section">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          </div>
+        </div>
+        <div class="row gy-4">
+          {{ range .regions }}
+            <div class="md:col-6 lg:col-4">
+              <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
+                <h3 class="h4 mb-3">{{ .name | markdownify }}</h3>
+                <p class="text-text-dark dark:text-darkmode-text-dark">
+                  {{ .description | markdownify }}
+                </p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Call to Action -->
+  {{ partial "call-to-action.html" . }}
+
 {{ end }}

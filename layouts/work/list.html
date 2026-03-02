@@ -3,60 +3,135 @@
 
   <section class="section">
     <div class="container">
-      {{/*
-        Pattern A (Case hub + deep-dive pages)
-
-        - /work/ should list CASE HUBS (section pages under work/).
-        - /work/<case>/ should render as a hub page (not a grid of children).
-      */}}
-
-      {{/*
-        Identify the top-level /work/ list page.
-        Using .FirstSection is more robust than hardcoding "/work/" and is future-proof for baseURL/language prefixes.
-      */}}
       {{ $isWorkRoot := and .FirstSection (eq .RelPermalink .FirstSection.RelPermalink) }}
 
       {{ if $isWorkRoot }}
-        <div class="row">
-          {{/*
-            List all case studies (top-level case hubs + deep dives) in the same grid.
+        {{/* Work Root Page - Show Portfolio + Case Studies */}}
+        
+        {{/* Introduction */}}
+        {{ with .Content }}
+          <div class="row justify-center mb-16">
+            <div class="lg:col-10">
+              <div class="content text-center">
+                {{ . }}
+              </div>
+            </div>
+          </div>
+        {{ end }}
 
-            - Top-level case hubs: .Sections
-            - Deep dives: RegularPages inside each case hub
-
-            Deep dives are expected to have:
-              parent_case: "<top-case-slug>"
-            Work card will render the parent reference when present.
-          */}}
-
-          {{ $cases := .Sections }}
-          {{ $deepDives := slice }}
-          {{ range $cases }}
-            {{ $deepDives = $deepDives | append (where .RegularPages "Params.draft" false) }}
-          {{ end }}
-
-          {{/*
-            Merge and sort.
-
-            We want to preserve a stable order:
-            1) by Weight (when set)
-            2) then by Title
-
-            Note: Hugo's sort is stable, so we sort by Title first, then Weight.
-          */}}
-          {{ $all := $cases | append $deepDives }}
-          {{ $all = sort $all "Title" "asc" }}
-          {{ $all = sort $all "Weight" "asc" }}
-
-          {{ $paginator := .Paginate $all }}
-          {{ range $paginator.Pages }}
-            <div class="col-12 md:col-6 lg:col-4 mb-8">
-              {{ partial "components/work-card" . }}
+        {{/* Client Logo Carousel */}}
+        {{ with .Params.clients }}
+          {{ if .enable }}
+            <div class="mb-16">
+              <div class="row">
+                <div class="col-12 text-center mb-8">
+                  <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                    {{ .title | markdownify }}
+                  </p>
+                </div>
+                <div class="col-12">
+                  <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                    {{ range .logos }}
+                      <div class="text-center px-4">
+                        <p class="text-base font-medium text-text-dark dark:text-darkmode-text-dark">
+                          {{ .name }}
+                        </p>
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
             </div>
           {{ end }}
-        </div>
+        {{ end }}
 
-        {{ partial "components/pagination.html" . }}
+        {{/* Regulated Industries Portfolio */}}
+        {{ with .Params.regulated_industries }}
+          <div class="mb-16">
+            <div class="row mb-12">
+              <div class="col-12 text-center">
+                <h2 class="mb-4">{{ .title | markdownify }}</h2>
+                <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                  {{ .subtitle | markdownify }}
+                </p>
+              </div>
+            </div>
+            <div class="row gy-6">
+              {{ range .cases }}
+                <div class="col-12">
+                  <div class="p-8 rounded-lg bg-light dark:bg-darkmode-light">
+                    <h3 class="h3 mb-2">{{ .name | markdownify }}</h3>
+                    <p class="text-sm text-primary font-medium mb-4">{{ .sector | markdownify }}</p>
+                    <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                      {{ .summary | markdownify }}
+                    </p>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+        {{/* Tech Portfolio */}}
+        {{ with .Params.tech_portfolio }}
+          <div class="mb-16">
+            <div class="row mb-12">
+              <div class="col-12 text-center">
+                <h2 class="mb-4">{{ .title | markdownify }}</h2>
+                <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                  {{ .subtitle | markdownify }}
+                </p>
+              </div>
+            </div>
+            <div class="row gy-6">
+              {{ range .cases }}
+                <div class="md:col-6">
+                  <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
+                    <h3 class="h4 mb-2">{{ .name | markdownify }}</h3>
+                    <p class="text-sm text-primary font-medium mb-4">{{ .sector | markdownify }}</p>
+                    <p class="text-text-dark dark:text-darkmode-text-dark">
+                      {{ .summary | markdownify }}
+                    </p>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+        {{/* Detailed Case Studies Section */}}
+        {{ $cases := .Sections }}
+        {{ $deepDives := slice }}
+        {{ range $cases }}
+          {{ $deepDives = $deepDives | append (where .RegularPages "Params.draft" false) }}
+        {{ end }}
+
+        {{ $all := $cases | append $deepDives }}
+        {{ $all = sort $all "Title" "asc" }}
+        {{ $all = sort $all "Weight" "asc" }}
+
+        {{ if $all }}
+          <div class="row mb-12">
+            <div class="col-12 text-center">
+              <h2 class="mb-4">Detailed case studies</h2>
+              <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                In-depth explorations of our transformation work
+              </p>
+            </div>
+          </div>
+
+          {{ $paginator := .Paginate $all }}
+          <div class="row">
+            {{ range $paginator.Pages }}
+              <div class="col-12 md:col-6 lg:col-4 mb-8">
+                {{ partial "components/work-card" . }}
+              </div>
+            {{ end }}
+          </div>
+
+          {{ partial "components/pagination.html" . }}
+        {{ end }}
+
       {{ else }}
         {{/* Case hub page */}}
         <div class="row justify-center">
@@ -73,17 +148,7 @@
             {{/* Case study metadata - chip-style labels */}}
             {{ partial "components/meta-chips" . }}
 
-            {{/*
-              Optional rich layout sections (mirrors the homepage features layout).
-
-              Content schema (front matter):
-                sections:
-                  - title: "..."
-                    image: "/images/...png"
-                    content: "..."        # markdown supported
-                    bulletpoints:         # optional
-                      - "..."
-            */}}
+            {{/* Optional rich layout sections */}}
             {{ with .Params.sections }}
               <div class="mb-10">
                 {{ range $i, $s := . }}
@@ -146,4 +211,6 @@
       {{ end }}
     </div>
   </section>
+
+  {{ partial "call-to-action.html" . }}
 {{ end }}

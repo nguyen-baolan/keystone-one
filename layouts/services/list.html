@@ -1,0 +1,181 @@
+{{ define "main" }}
+  <!-- Hero Section -->
+  {{ with .Params.hero }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10 text-center">
+            <h1 class="mb-4">{{ .title | markdownify }}</h1>
+            <p class="text-xl text-text-dark dark:text-darkmode-text-dark">
+              {{ .subtitle | markdownify }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Target Audience -->
+  {{ with .Params.audience }}
+    <section class="section bg-light dark:bg-darkmode-light">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          </div>
+        </div>
+        <div class="row gy-4">
+          {{ range .segments }}
+            <div class="md:col-6 lg:col-4">
+              <div class="h-full p-6 rounded-lg bg-body dark:bg-darkmode-body">
+                <h3 class="h4 mb-3">{{ .name | markdownify }}</h3>
+                <p class="text-text-dark dark:text-darkmode-text-dark">
+                  {{ .description | markdownify }}
+                </p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Service Offerings -->
+  {{ with .Params.offerings }}
+    <section class="section">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          </div>
+        </div>
+        <div class="row gy-6">
+          {{ range .services }}
+            <div class="col-12">
+              <div class="p-8 rounded-lg bg-light dark:bg-darkmode-light">
+                <h3 class="h3 mb-3">{{ .name | markdownify }}</h3>
+                <p class="text-lg mb-6">{{ .description | markdownify }}</p>
+                <ul class="ml-6">
+                  {{ range .deliverables }}
+                    <li class="relative mb-3 pl-6">
+                      <i class="fa fa-check absolute left-0 top-1.5 text-primary"></i>
+                      {{ . | markdownify }}
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Methodology -->
+  {{ with .Params.methodology }}
+    <section class="section bg-gradient">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+            <p class="text-lg">{{ .subtitle | markdownify }}</p>
+          </div>
+        </div>
+        <div class="row gy-6">
+          {{ range $index, $phase := .phases }}
+            <div class="md:col-6">
+              <div class="h-full p-6 rounded-lg bg-body dark:bg-darkmode-body">
+                <div class="flex items-start mb-4">
+                  <span class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold mr-4">
+                    {{ add $index 1 }}
+                  </span>
+                  <div>
+                    <h3 class="h5 mb-1">{{ .name | markdownify }}</h3>
+                    <p class="text-sm text-primary font-medium">{{ .duration }}</p>
+                  </div>
+                </div>
+                <p class="text-text-dark dark:text-darkmode-text-dark">
+                  {{ .description | markdownify }}
+                </p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Operating Principles -->
+  {{ with .Params.principles }}
+    <section class="section">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+            <p class="text-lg">{{ .subtitle | markdownify }}</p>
+          </div>
+        </div>
+        <div class="row gy-4">
+          {{ range .items }}
+            <div class="md:col-6 lg:col-4">
+              <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
+                <h3 class="h5 mb-3">{{ .principle | markdownify }}</h3>
+                <p class="text-text-dark dark:text-darkmode-text-dark">
+                  {{ .description | markdownify }}
+                </p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Technical Philosophy -->
+  {{ with .Params.technical }}
+    <section class="section bg-light dark:bg-darkmode-light">
+      <div class="container">
+        <div class="row mb-12">
+          <div class="col-12 text-center">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+            <p class="text-lg">{{ .subtitle | markdownify }}</p>
+          </div>
+        </div>
+        <div class="row gy-4">
+          {{ range .principles }}
+            <div class="md:col-6">
+              <div class="h-full p-6 rounded-lg bg-body dark:bg-darkmode-body">
+                <h3 class="h5 mb-3">{{ .name | markdownify }}</h3>
+                <p class="text-text-dark dark:text-darkmode-text-dark">
+                  {{ .description | markdownify }}
+                </p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Partnership Approach -->
+  {{ with .Params.partnership }}
+    <section class="section">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="p-8 rounded-lg bg-gradient">
+              <h2 class="mb-6 text-center">{{ .title | markdownify }}</h2>
+              <div class="content">
+                {{ .content | markdownify }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Call to Action -->
+  {{ partial "call-to-action.html" . }}
+
+{{ end }}
