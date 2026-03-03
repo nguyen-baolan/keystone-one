@@ -1,12 +1,12 @@
 ---
 title: "Services"
-meta_title: "AI Advisory & Bespoke AI Implementation Services"
+meta_title: "AI Advisory & Implementation Services"
 description: "Custom AI infrastructure and strategic advisory for mid-market enterprises and investment firms."
 draft: false
 
 # Hero Section
 hero:
-  title: "AI Advisory & Bespoke AI Implementation"
+  title: "AI Advisory & Implementation"
   subtitle: "Strategic guidance and hands-on technical delivery for organizations that demand institutional-grade AI systems."
 
 # Target Audience
@@ -18,7 +18,7 @@ audience:
     - name: "Investment firms"
       description: "Managing $100M+ AUM and requiring AI systems that meet fiduciary standards, regulatory compliance, and institutional governance requirements."
     - name: "Regulated mid-market enterprises"
-      description: "Modernizing legacy workflows in banking, insurance, healthcare, and other regulated sectors where AI must operate within strict compliance frameworks."
+      description: "Modernizing legacy workflows in regulated sectors where AI must operate within strict compliance frameworks."
 
 # Service Offerings
 offerings:
@@ -77,62 +77,62 @@ methodology:
       duration: "4-6 weeks"
 
 # Operating Principles
-principles:
-  title: "Our operating principles"
-  subtitle: "The foundations that guide every engagement"
-  items:
-    - principle: "Augmentation over replacement"
-      description: "We design AI to amplify human expertise, not replace it. Your teams remain in control, with AI handling repetitive and analytical work."
+# principles:
+#   title: "Our operating principles"
+#   subtitle: "The foundations that guide every engagement"
+#   items:
+#     - principle: "Augmentation over replacement"
+#       description: "We design AI to amplify human expertise, not replace it. Your teams remain in control, with AI handling repetitive and analytical work."
       
-    - principle: "Asymmetric value creation focus"
-      description: "We target use cases where AI delivers disproportionate returns—automating weeks of analysis, not minutes of data entry."
+#     - principle: "Asymmetric value creation focus"
+#       description: "We target use cases where AI delivers disproportionate returns—automating weeks of analysis, not minutes of data entry."
       
-    - principle: "Institutional-grade governance"
-      description: "Every system includes audit trails, compliance controls, and governance frameworks suitable for regulated environments and fiduciary responsibility."
+#     - principle: "Institutional-grade governance"
+#       description: "Every system includes audit trails, compliance controls, and governance frameworks suitable for regulated environments and fiduciary responsibility."
       
-    - principle: "Glass-box systems"
-      description: "Full transparency in AI decision-making. Every output is traceable, explainable, and auditable—essential for institutional trust."
+#     - principle: "Glass-box systems"
+#       description: "Full transparency in AI decision-making. Every output is traceable, explainable, and auditable—essential for institutional trust."
       
-    - principle: "No vendor lock-in"
-      description: "Open architectures with swappable components. You own your data, models, and infrastructure without dependency on proprietary platforms."
+#     - principle: "No vendor lock-in"
+#       description: "Open architectures with swappable components. You own your data, models, and infrastructure without dependency on proprietary platforms."
       
-    - principle: "Capability transfer over dependency"
-      description: "We enable your teams to operate AI systems independently. Our goal is empowerment, not perpetual consulting engagements."
+#     - principle: "Capability transfer over dependency"
+#       description: "We enable your teams to operate AI systems independently. Our goal is empowerment, not perpetual consulting engagements."
       
-    - principle: "Human-in-the-loop by design"
-      description: "AI augments decision-making but critical choices remain with humans. We build review points, override mechanisms, and feedback loops into every system."
+#     - principle: "Human-in-the-loop by design"
+#       description: "AI augments decision-making but critical choices remain with humans. We build review points, override mechanisms, and feedback loops into every system."
+
+# Partnership Approach
+# partnership:
+#   title: "We seek to create impact, not vendor lock-in"
+#   content: |
+#     Our approach is fundamentally different from traditional consulting or software vendors.
+    
+#     **We do not aim to be your forever support.** Instead, we focus on transferring capabilities to your team so they can take your AI infrastructure further. We train and upskill key team members, provide comprehensive documentation, and establish frameworks that enable independent operation and continuous improvement.
+    
+#     We provide ongoing technical support only as-needed. Many clients engage us for strategic advisory, architecture review, or specialized technical assistance as their AI maturity evolves. The difference is that this is your choice, not a dependency we engineer.
+    
+#     **Our success is measured by your independence,** not by the length of our engagement.
 
 # Technical Philosophy
 technical:
-  title: "Technical philosophy"
-  subtitle: "How we build institutional-grade AI systems"
+  title: "Governance philosophy"
+  subtitle: "We build institutional-grade AI systems"
   principles:
     - name: "Replayability & auditability"
       description: "Every AI operation is logged with full lineage tracking. You can replay any decision, audit any output, and trace every data transformation."
       
     - name: "Data sovereignty"
-      description: "Your data stays within your infrastructure. We design systems that respect data residency requirements, privacy regulations, and enterprise security policies."
+      description: "We design systems that align with your data sovereignty requirements, privacy regulations, and security policies."
       
-    - name: "Swappable frontier models / OSS models"
-      description: "No lock-in to specific AI providers. Our architectures support seamless model swapping—from OpenAI to Anthropic to open-source models—as the landscape evolves."
+    - name: "Swappable frontier models"
+      description: "No lock-in to specific AI providers. Our architectures support seamless model swapping so you don't get stuck with one vendor."
       
     - name: "Open-source leverage"
-      description: "We build on proven open-source foundations whenever possible, reducing costs and avoiding proprietary dependencies."
+      description: "When suitable, we build on proven open-source foundations, reducing costs and avoiding proprietary dependencies."
       
     - name: "Token economics awareness"
-      description: "We optimize for cost-efficiency, implementing intelligent caching, prompt optimization, and model routing to minimize AI inference costs at scale."
+      description: "We optimize for cost-efficiency and will provide you with transparency on token and infrastructure costs so that you can forecast OPEX easily."
 
-# Partnership Approach
-partnership:
-  title: "We seek to create impact, not vendor lock-in"
-  content: |
-    Our approach is fundamentally different from traditional consulting or software vendors.
-    
-    **We do not aim to be your forever support.** Instead, we focus on transferring capabilities to your team so they can take your AI infrastructure further. We train and upskill key team members, provide comprehensive documentation, and establish frameworks that enable independent operation and continuous improvement.
-    
-    **That being said,** we also provide ongoing technical support on request and as-needed. Many clients engage us for strategic advisory, architecture review, or specialized technical assistance as their AI maturity evolves. The difference is that this is your choice, not a dependency we engineer.
-    
-    **Our success is measured by your independence,** not by the length of our engagement.
 ---
 
-We help mid-market enterprises and investment firms turn AI ambitions into production-grade systems that deliver measurable business value—with the governance, transparency, and capability transfer required for long-term success.

@@ -23,4 +23,37 @@
       },
     },
   });
+
+  // Client Logo Carousel
+  // ----------------------------------------
+  // Auto-scrolling logo carousel with responsive breakpoints
+  new Swiper(".client-logo-slider", {
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    speed: 800,
+    slidesPerView: 2,
+    breakpoints: {
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+      1280: {
+        slidesPerView: 6,
+        spaceBetween: 60,
+      },
+    },
+  });
 })();

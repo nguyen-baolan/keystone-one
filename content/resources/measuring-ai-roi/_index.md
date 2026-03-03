@@ -29,7 +29,7 @@ sections:
     image: "/images/service-6.png"
     content: "The strongest returns we observed did not come from labor replacement, but from identifying boring yet mission-critical processes that AI could do with higher speed, accuracy and lower cost than expert humans, enabling experts to do what they're best at: using their judgment."
 
-draft: false
+draft: true
 ---
 ## 4 steps to estimating the ROI of AI in your organization
 

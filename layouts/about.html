@@ -42,15 +42,15 @@
             <h2 class="mb-4">The Keystone Philosophy</h2>
           </div>
         </div>
-        <div class="row gy-8">
+        <div class="row gy-4">
           {{ range . }}
-            <div class="col-12">
-              <div class="p-8 rounded-lg bg-light dark:bg-darkmode-light">
-                <div class="flex items-start mb-4">
-                  <span class="text-4xl mr-4">{{ .icon }}</span>
-                  <h3 class="h3 mt-2">{{ .title | markdownify }}</h3>
+            <div class="md:col-6 lg:col-4">
+              <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
+                <div class="text-center mb-4">
+                  <span class="text-4xl">{{ .icon }}</span>
                 </div>
-                <div class="content text-lg">
+                <h3 class="h4 mb-3 text-center">{{ .title | markdownify }}</h3>
+                <div class="content">
                   {{ .content | markdownify }}
                 </div>
               </div>
@@ -71,16 +71,16 @@
           </div>
         </div>
 
-        <!-- Lead -->
-        {{ with .lead }}
+        <!-- Team Members Grid -->
+        {{ with .members }}
           <div class="row justify-center mb-12">
-            <div class="lg:col-8">
-              <div class="p-8 rounded-lg bg-body dark:bg-darkmode-body">
-                <h3 class="h3 mb-2">{{ .name | markdownify }}</h3>
-                <p class="text-primary font-medium mb-4">{{ .title | markdownify }}</p>
-                <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
-                  {{ .bio | markdownify }}
-                </p>
+            <div class="col-12">
+              <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+                {{ range . }}
+                  <div class="w-full max-w-sm md:w-auto md:flex-1 md:max-w-xs lg:max-w-sm">
+                    {{ partial "components/team-member-card.html" (dict "name" .name "title" .title "bio" .bio "image" .image) }}
+                  </div>
+                {{ end }}
               </div>
             </div>
           </div>
@@ -92,9 +92,22 @@
             <div class="lg:col-10">
               <div class="p-8 rounded-lg bg-body dark:bg-darkmode-body">
                 <h3 class="h3 mb-4 text-center">{{ .title | markdownify }}</h3>
-                <div class="content text-lg">
+                <div class="content text-lg mb-6">
                   {{ .content | markdownify }}
                 </div>
+
+                <!-- AI Teammates Grid (Optional) -->
+                {{ with .ai_teammates }}
+                  <div class="mt-8 pt-8 border-t border-border dark:border-darkmode-border">
+                    <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+                      {{ range . }}
+                        <div class="w-full max-w-sm md:w-auto md:flex-1 md:max-w-xs lg:max-w-sm">
+                          {{ partial "components/team-member-card.html" (dict "name" .name "title" .title "bio" .bio "image" .image) }}
+                        </div>
+                      {{ end }}
+                    </div>
+                  </div>
+                {{ end }}
               </div>
             </div>
           </div>

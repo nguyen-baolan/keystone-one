@@ -16,10 +16,6 @@ name = "Our Work"
 url = "/work"
 weight = 3
 
-[[main]]
-name = "Resources"
-url = "/resources"
-weight = 4
 
 [[main]]
 name = "About"

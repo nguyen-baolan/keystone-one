@@ -131,6 +131,23 @@
     </section>
   {{ end }}
 
+    <!-- Partnership Approach -->
+  {{ with .Params.partnership }}
+    <section class="section">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="p-8 rounded-lg bg-gradient">
+              <h2 class="mb-6 text-center">{{ .title | markdownify }}</h2>
+              <div class="content">
+                {{ .content | markdownify }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
   <!-- Technical Philosophy -->
   {{ with .Params.technical }}
     <section class="section bg-light dark:bg-darkmode-light">
@@ -157,25 +174,11 @@
     </section>
   {{ end }}
 
-  <!-- Partnership Approach -->
-  {{ with .Params.partnership }}
-    <section class="section">
-      <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-10">
-            <div class="p-8 rounded-lg bg-gradient">
-              <h2 class="mb-6 text-center">{{ .title | markdownify }}</h2>
-              <div class="content">
-                {{ .content | markdownify }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  {{ end }}
+
 
   <!-- Call to Action -->
-  {{ partial "call-to-action.html" . }}
+  <div class="mt-20">
+    {{ partial "call-to-action.html" . }}
+  </div>
 
 {{ end }}

@@ -34,7 +34,7 @@ sections:
     image: "/images/service-3.png"
     content: "Based on our work with clients across industries, we've identified clear patterns for when to build, when to buy, and when to pursue hybrid approaches.<br><br>This resource includes practical decision checklists, TCO calculations, readiness assessments, and warning signs that your decision may be flawed—helping you avoid costly mistakes before you commit."
 
-draft: false
+draft: true
 ---
 
 ## Executive Summary

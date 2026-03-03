@@ -1,0 +1,35 @@
+{{/*
+  Team Member Card
+
+  Input: dict with "name", "title", "bio", "image" (optional)
+  Output: square card with image, name, title, and bio
+
+  Usage:
+    {{ partial "components/team-member-card.html" (dict "name" "John Doe" "title" "Director" "bio" "..." "image" "/images/john.png") }}
+*/}}
+
+<div class="team-member-card">
+  <div class="bg-light dark:bg-darkmode-light rounded-lg p-6 h-full flex flex-col">
+    {{/* Square image container */}}
+    {{ with .image }}
+      <div class="team-member-image mb-4 mx-auto">
+        <div class="aspect-square w-full max-w-[200px] mx-auto overflow-hidden rounded-lg">
+          <img 
+            src="{{ . | relURL }}" 
+            alt="{{ $.name }}"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    {{ end }}
+    
+    {{/* Content */}}
+    <div class="team-member-content text-center flex-1 flex flex-col">
+      <h3 class="h4 mb-2">{{ .name | markdownify }}</h3>
+      <p class="text-primary font-medium mb-3">{{ .title | markdownify }}</p>
+      <p class="text-text-dark dark:text-darkmode-text-dark">
+        {{ .bio | markdownify }}
+      </p>
+    </div>
+  </div>
+</div>

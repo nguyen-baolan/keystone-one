@@ -45,7 +45,35 @@
           {{ end }}
         {{ end }}
 
-        {{/* Regulated Industries Portfolio */}}
+  
+        {{/* Tech Portfolio */}}
+        {{ with .Params.tech_portfolio }}
+          <div class="mb-16">
+            <div class="row mb-12">
+              <div class="col-12 text-center">
+                <h2 class="mb-4">{{ .title | markdownify }}</h2>
+                <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
+                  {{ .subtitle | markdownify }}
+                </p>
+              </div>
+            </div>
+            <div class="row gy-10">
+              {{ range .cases }}
+                <div class="md:col-6 mb-8">
+                  <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
+                    <h3 class="h4 mb-2">{{ .name | markdownify }}</h3>
+                    <p class="text-sm text-primary font-medium mb-4">{{ .sector | markdownify }}</p>
+                    <p class="text-text-dark dark:text-darkmode-text-dark">
+                      {{ .summary | markdownify }}
+                    </p>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+      {{/* Regulated Industries Portfolio */}}
         {{ with .Params.regulated_industries }}
           <div class="mb-16">
             <div class="row mb-12">
@@ -56,9 +84,9 @@
                 </p>
               </div>
             </div>
-            <div class="row gy-6">
+            <div class="row gy-10">
               {{ range .cases }}
-                <div class="col-12">
+                <div class="md:col-6 mb-8">
                   <div class="p-8 rounded-lg bg-light dark:bg-darkmode-light">
                     <h3 class="h3 mb-2">{{ .name | markdownify }}</h3>
                     <p class="text-sm text-primary font-medium mb-4">{{ .sector | markdownify }}</p>
@@ -72,32 +100,6 @@
           </div>
         {{ end }}
 
-        {{/* Tech Portfolio */}}
-        {{ with .Params.tech_portfolio }}
-          <div class="mb-16">
-            <div class="row mb-12">
-              <div class="col-12 text-center">
-                <h2 class="mb-4">{{ .title | markdownify }}</h2>
-                <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
-                  {{ .subtitle | markdownify }}
-                </p>
-              </div>
-            </div>
-            <div class="row gy-6">
-              {{ range .cases }}
-                <div class="md:col-6">
-                  <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
-                    <h3 class="h4 mb-2">{{ .name | markdownify }}</h3>
-                    <p class="text-sm text-primary font-medium mb-4">{{ .sector | markdownify }}</p>
-                    <p class="text-text-dark dark:text-darkmode-text-dark">
-                      {{ .summary | markdownify }}
-                    </p>
-                  </div>
-                </div>
-              {{ end }}
-            </div>
-          </div>
-        {{ end }}
 
         {{/* Detailed Case Studies Section */}}
         {{ $cases := .Sections }}
@@ -113,9 +115,9 @@
         {{ if $all }}
           <div class="row mb-12">
             <div class="col-12 text-center">
-              <h2 class="mb-4">Detailed case studies</h2>
+              <h2 class="mb-4">Case studies</h2>
               <p class="text-lg text-text-dark dark:text-darkmode-text-dark">
-                In-depth explorations of our transformation work
+                Explore some of our latest AI transformation work
               </p>
             </div>
           </div>
@@ -190,7 +192,7 @@
             </div>
 
             {{/* Deep dives (regular pages inside the case folder) */}}
-            {{ $dives := where .RegularPages "Params.draft" false }}
+            <!-- {{ $dives := where .RegularPages "Params.draft" false }}
             {{ if gt (len $dives) 0 }}
               <section class="section pt-0">
                 <div class="container px-0">
@@ -205,7 +207,7 @@
                   </div>
                 </div>
               </section>
-            {{ end }}
+            {{ end }} -->
           </article>
         </div>
       {{ end }}

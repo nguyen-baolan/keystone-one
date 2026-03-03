@@ -1,8 +1,8 @@
 ---
 enable: true
-title: "Ready to move AI beyond pilots?"
+title: "Ready to build your own AI intelligence infrastructure?"
 image: "/images/call-to-action.png"
-description: "If you’re under pressure to show ROI, reduce risk, or get control of fragmented AI initiatives, let us guide you and help you deliver value."
+description: "Partner with Keystone One to design, build, and scale AI solutions that transform your business operations."
 button:
   enable: true
   label: "Start a conversation"

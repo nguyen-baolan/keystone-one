@@ -1,59 +1,65 @@
 ---
 # Banner
 banner:
-  title: "Custom AI infrastructure for Mid-Market Enterprises"
-  content: "We provide AI advisory and bespoke AI services to professional services firms who want to take full advantage of AI without in-house overhead."
+  title: "Partners in AI & Digital transformation"
+  content: ""
   image: "/images/keystone-hero-banner.jpg"
   video:
-    enabled: true
+    enabled: false
     src: "/videos/keystone-hero-banner.mp4"
-    poster: "/images/keystone-hero-banner.png"
+    poster: "/images/keystone-hero-banner.jpg"
     force_mobile: true
   button:
     enable: true
-    label: "Contact us"
+    label: "Start your transformation"
     link: "/contact"
+
+USP:
+  enable: true
+  title: "We help mid-market companies build their own AI intelligence infrastructure."
 
 # Client Logo Carousel
 clients:
   enable: true
-  title: "Decades of digital transformation across industries"
+  title: "Decades of successful transformations across industries"
   logos:
     - name: "Crédit Agricole"
-      # image: "/images/clients/credit-agricole.png"
+      image: "/images/clients/logo-ca.png"
     - name: "Banque de France"
-      # image: "/images/clients/banque-de-france.png"
+      image: "/images/clients/logo-bdf.png"
     - name: "Wall Street English"
-      # image: "/images/clients/wall-street-english.png"
+      image: "/images/clients/logo-wse.png"
     - name: "Grove HR"
-      # image: "/images/clients/grove-hr.png"
+      image: "/images/clients/logo-grovehr.png"
     - name: "RegenX"
-      # image: "/images/clients/regenx.png"
+      image: "/images/clients/logo-regenx.png"
     - name: "Wavemaker Impact"
-      # image: "/images/clients/wavemaker-impact.png"
+      image: "/images/clients/logo-wmi.png"
 
 # AI Value Creation Manifesto
 manifesto:
   enable: true
   title: "Our AI value creation manifesto"
-  subtitle: "How we create value for our clients"
+  subtitle: "We operate at the intersection of AI and value creation in knowledge-intensive industries. <br/>Over the years, we have continuously refined our approach to serve our clients best."
   principles:
-    - title: "Augmentation, not replacement"
-      content: "We design AI systems that amplify human expertise, not replace it. Your teams remain in control, with AI handling the repetitive and time-intensive work."
-      
-    - title: "Institutional-grade governance"
-      content: "Every system we build includes audit trails, compliance controls, and governance frameworks suitable for regulated environments and fiduciary responsibility."
-      
-    - title: "No vendor lock-in"
-      content: "We build on open architectures with swappable components. You own your data, your models, and your infrastructure—without dependency on proprietary platforms."
-      
-    - title: "Glass box by default"
-      content: "Full transparency in how AI systems make decisions. Every output is traceable, explainable, and auditable—critical for institutional trust and regulatory compliance."
-      
-    - title: "Partnership, not outsourcing"
-      content: "We transfer capabilities to your team, not create dependencies. Our goal is to enable your organization to operate and evolve AI systems independently."
-      
+    - title: "Strategic partnership, not outsourcing"
+      content: "We engage deeply with leadership and operational teams to co-develop a bespoke layer of AI-driven intelligence that creates a real competitive advantage."
+           
     - title: "Asymmetric value creation"
-      content: "We focus on use cases where AI delivers disproportionate returns—automating complex analysis that would take weeks, not simple tasks that save minutes."
+      content: "We focus on use cases where AI delivers disproportionate measurable returns, not just 'cost-cutting initiatives'."
+
+    - title: "No vendor lock-in"
+      content: "We transfer capabilities to your team and use swappable models. Our goal is to enable your organization to operate and evolve AI systems independently."
+
+    - title: "Augmentation, not replacement"
+      content: "We design AI systems that amplify your existing human expertise. Your teams remain in control, with AI handling the repetitive and time-consuming work."
+
+    - title: "Institutional-grade governance"
+      content: "Every system we build includes audit trails, compliance controls and governance frameworks ensuring transparency and proper monitoring."
+            
+    - title: "Glass box by default"
+      content: "You get full transparency in how AI systems make decisions out of the box. Every output is traceable, explainable, and auditable."
+
+
 
 ---
