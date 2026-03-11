@@ -9,6 +9,18 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Playfair Display', serif !important;
 }
 
+/* Mobile card spacing system - fixes cards appearing squashed together on mobile */
+/* Applies bottom margin to all column elements within rows that use gap-y utilities */
+/* This ensures proper visual separation between cards when they stack vertically on mobile */
+.row[class*="gy-"] > [class*="col-"] {
+  @apply mb-8 sm:mb-0;
+}
+
+/* Reset bottom margin for last child to avoid extra space at bottom of grid */
+.row[class*="gy-"] > [class*="col-"]:last-child {
+  @apply mb-0;
+}
+
 /* Enhanced accordion styling for better visibility */
 .accordion {
   @apply bg-blue-50 dark:bg-blue-950 border-l-4 border-l-blue-500 dark:border-l-blue-400 border-blue-200 dark:border-blue-800 shadow-sm;
@@ -155,4 +167,9 @@ h1, h2, h3, h4, h5, h6,
 .featured-work-slider .swiper-slide {
   height: auto;
   display: flex;
+}
+
+/* Override mobile card spacing for swiper slides to prevent layout issues */
+.swiper-wrapper > [class*="col-"] {
+  @apply mb-0;
 }

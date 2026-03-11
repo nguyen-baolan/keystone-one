@@ -16,16 +16,16 @@ philosophy:
   - title: "Keystone in architecture"
     icon: "🏛️"
     content: |
-      In architecture, the keystone is the final piece that holds the existing ones together.
+      The name Keystone comes from architecture. In a stone arch or bridge, the keystone is an element playing the role of interface between all other elements, holding them together.
 
-      We co-create keystone AI infrastructures that allows you to augment their existing workflows and expertise, and develop a new competitive edge. 
+      At Keystone One, we sit at the interface between business objectives and technology, helping clients align strategy, AI, and operational processes to develop a new competitive edge. 
 
-  - title: "Keystone in ecosystems"
-    icon: "🌱"
-    content: |
-      In ecosystems, keystone species are pillars that allow others to thrive. 
+  # - title: "Keystone in ecosystems"
+  #   icon: "🌱"
+  #   content: |
+  #     In ecosystems, keystone species are pillars that allow others to thrive. 
       
-      We co-create keystone AI intelligence that allows your teams to operate at their highest potential.
+  #     In our work, we co-create keystone AI intelligence that allows your teams to operate at their highest potential.
 
   - title: "The 'One' in Keystone One"
     icon: "🎯"
@@ -40,13 +40,13 @@ team:
   members:
     - name: "Bao Nguyen"
       title: "Director, Keystone One"
-      bio: "15+ years leading digital transformation initiatives across banking, education, and venture capital. Deep expertise in AI strategy, regulatory compliance, and institutional governance frameworks."
+      bio: "15+ years leading digital transformation across various industries including banking, education, and private capital. Deep expertise in AI strategy, system design and operations."
       image: "/images/bao.png"
 
   approach:
     title: "Our evolving, agentic team"
     content: |
-      We leverage AI capabilities to build **agentic teammates** across all the functions we need to deliver the absolute best value to our clients.
+      We leverage AI capabilities to build **agentic teams** across the functions we need to deliver the absolute best value to our clients.
            
       By building and using agentic AI systems ourselves, we understand firsthand what works in production, what governance frameworks are truly necessary, and how to transfer capabilities to client teams.
     
@@ -74,7 +74,7 @@ presence:
     - name: "Singapore"
       description: "Hub for Asia-Pacific operations, with expertise in cross-border digital transformation, venture building operations and the tech ecosystem."
     - name: "Vietnam"
-      description: "Emerging market digital transformation experience, SaaS platforms, and digital-native companies![alt text](image.png)."
+      description: "Emerging market digital transformation experience, SaaS platforms, and digital-native companies."
 ---
 
 

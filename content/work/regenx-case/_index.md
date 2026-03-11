@@ -44,7 +44,7 @@ sections:
 
 draft: false
 ---
-
+<!-- 
 ## The context & the Client's case
 
 Global supply chains are under pressure to decarbonize. For agricultural buyers, particularly in coffee, cocoa, and other commodity crops, this means transforming farming practices across thousands of smallholder farms in remote regions.
@@ -82,7 +82,7 @@ We partnered directly with sustainability teams, agronomists, and farmer coopera
 - Abstract complex regenerative farming practices into simple, actionable guidance
 - Integrate with buyers' existing field programs for seamless rollout
 - Provide agronomists with monitoring dashboards to validate AI outputs and build trust
-- Deploy a pilot with select farmer groups and iterate based on real-world feedback
+- Deploy a pilot with select farmer groups and iterate based on real-world feedback -->
 
 {{< accordion "Key platform capabilities:" >}}
 
@@ -103,7 +103,7 @@ The AI orchestration layer handled complex agronomic reasoning:
 
 {{< /accordion >}}
 
----
+<!-- ---
 
 ## Outcomes
 
@@ -137,11 +137,11 @@ Within the first 3 months, 70% of farmers enrolled in the program adopted the so
 
 In short, the outcome was not just a "farming app," but a **scalable climate transformation infrastructure enabled by AI**: one that aligned buyer commitments with farmer economics, enabled personalized support at scale, and created auditable progress toward measurable climate goals.
 
----
+--- -->
 
 ## Could this apply to your organization?
 
-If your business depends on being able to provide personalized support at scale and a low cost, while being able to guarantee accuracy and ...  
+If you make mission-critical decisions based on prior research & analysis, you need a proper AI intelligence infrastructure
 
 Typical examples include:
 - **Professional services firms**: Scaling advisory capabilities through AI-assisted diagnostics, generating tailored recommendations while maintaining institutional-grade oversight.
@@ -159,9 +159,7 @@ We typically help organizations:
 - Establish monitoring and validation frameworks to build trust and ensure quality
 - Move from pilot to scaled deployment across supply chain networks
 
-If this sounds relevant to your organization, let's start a conversation now.
-
-{{< cta-button relref="contact" >}}Start a conversation{{< /cta-button >}}
-<br><br>
+<!-- {{< cta-button relref="contact" >}}Start a conversation{{< /cta-button >}}
+<br><br> -->
 
 ---

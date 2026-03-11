@@ -46,7 +46,7 @@ sections:
 
 draft: false
 ---
-
+<!-- 
 ## The context & the Client's case
 
 Organizations across industries have vast amounts of siloed and unstructured data. This includes meeting notes, field notes, reports, spreadsheets, etc. Turning this raw knowledge into actionable and reliable insights remains a slow and costly process: someone actually has to find the docs, read them all and produce a synthesis!
@@ -80,7 +80,7 @@ We partnered directly with executives and the investment team to:
 - Provide a modular architecture to deliver value within 3 months but can scale with the firm's complexity
 - Prioritize a small set of high-value decision workflows worth embedding AI into
 - Design an operating model that made outputs auditable and explainable while ensuring the AI solution become embedded in the Client's investment processes
-- Build and deploy a production-grade AI solution on the Client's cloud environment
+- Build and deploy a production-grade AI solution on the Client's cloud environment -->
 
 {{< accordion "See a simplified excerpt of the process mapping:" >}}
 
@@ -121,7 +121,7 @@ flowchart TB
 
 {{< /mermaid >}}
 {{< /accordion >}}
-
+<!-- 
 ---
 
 ## Outcomes
@@ -155,14 +155,15 @@ flowchart TB
 
 In short, the outcome was not "GPT-like analyst”, but a **scalable decision infrastructure**: one that reduced friction, increased confidence, and enabled the venture studio to allocate capital faster—without compromising quality, rigor, or governance.
 
----
+--- -->
 ## Could this apply to your organization?
 
-- If the value you create is directly tied to people doing some form of research & analysis to produce some "internal memos", you can use AI to unlock new value
-- Typical examples include:
-  - In investment: Private Equity due diligence, investment committee memos, corporate M&A target assessment and synergy analysis, etc.
-  - In banking: project financing assessment, Relationship Manager briefings, policy interpretation, etc.
-  - Across industries: operational and risks assessments based on existing data sources, customer service or sales materials enablement, etc.
+If you make mission-critical decisions based on prior research & analysis, you need a proper AI intelligence infrastructure
+
+Typical examples include:
+- **In investment**: Private Equity due diligence, investment committee memos, corporate M&A target assessment and synergy analysis, etc.
+- **In banking**: project financing assessment, Relationship Manager briefings, policy interpretation, etc.
+- **Across industries**: operational and risks assessments based on existing data sources, customer service or sales materials enablement, etc.
 
 ### How you can get started
 We typically help organizations:
@@ -173,9 +174,7 @@ We typically help organizations:
 - Validate output quality against internal expert judgment before scaling
 - Move from pilot to embedded, trusted usage within core workflows
 
-If this sounds relevant to your organization, let's start a conversation now.
-
-{{< cta-button relref="contact" >}}Start a conversation{{< /cta-button >}}
-<br><br>
+<!-- {{< cta-button relref="contact" >}}Start a conversation{{< /cta-button >}} -->
+<!-- <br><br> -->
 
 ---

@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Partners in AI & Digital transformation"
+  title: "AI-powered intelligence infrastructure for everyday decisions"
   content: ""
   image: "/images/keystone-hero-banner.jpg"
   video:
@@ -10,18 +10,18 @@ banner:
     poster: "/images/keystone-hero-banner.jpg"
     force_mobile: true
   button:
-    enable: true
+    enable: false
     label: "Start your transformation"
     link: "/contact"
 
 USP:
   enable: true
-  title: "We help mid-market companies build their own AI intelligence infrastructure."
+  title: "We help companies in knowledge-intensive industries to make better and faster AI-driven decisions."
 
 # Client Logo Carousel
 clients:
   enable: true
-  title: "Decades of successful transformations across industries"
+  title: "--"
   logos:
     - name: "Crédit Agricole"
       image: "/images/clients/logo-ca.png"
@@ -39,11 +39,11 @@ clients:
 # AI Value Creation Manifesto
 manifesto:
   enable: true
-  title: "Our AI value creation manifesto"
-  subtitle: "We operate at the intersection of AI and value creation in knowledge-intensive industries. <br/>Over the years, we have continuously refined our approach to serve our clients best."
+  title: "How we create value"
+  subtitle: ""
   principles:
     - title: "Strategic partnership, not outsourcing"
-      content: "We engage deeply with leadership and operational teams to co-develop a bespoke layer of AI-driven intelligence that creates a real competitive advantage."
+      content: "We engage deeply with leadership and operational teams to co-develop the right intelligence infrastructure, specific to each client."
            
     - title: "Asymmetric value creation"
       content: "We focus on use cases where AI delivers disproportionate measurable returns, not just 'cost-cutting initiatives'."

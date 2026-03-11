@@ -7,7 +7,7 @@ draft: false
 # Hero Section
 hero:
   title: "AI Advisory & Implementation"
-  subtitle: "Strategic guidance and hands-on technical delivery for organizations that demand institutional-grade AI systems."
+  subtitle: "We provide both strategic advisory and implementation services."
 
 # Target Audience
 audience:

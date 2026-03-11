@@ -54,7 +54,7 @@
   <!-- USP Section -->
   {{ with .Params.USP }}
     {{ if .enable }}
-      <section class="py-12 md:py-16 bg-light dark:bg-darkmode-light">
+      <section class="py-12 md:py-16 dark:bg-darkmode-light">
         <div class="container">
           <div class="row justify-center">
             <div class="md:col-10 lg:col-8 mx-auto text-center">
@@ -70,7 +70,7 @@
   <!-- Client Logo Carousel -->
   {{ with .Params.clients }}
     {{ if .enable }}
-      <section class="py-12 md:py-16 bg-white dark:bg-darkmode-body">
+      <section class="py-12 md:py-16 dark:bg-darkmode-light">
         <div class="container">
           <div class="row">
             <div class="col-12 text-center mb-10">
@@ -113,7 +113,7 @@
               <p class="text-lg">{{ .subtitle | markdownify }}</p>
             </div>
           </div>
-          <div class="row gy-4">
+          <div class="row gy-10 md:gy-5 lg:gy-4">
             {{ range .principles }}
               <div class="md:col-6 lg:col-4">
                 <div class="h-full p-6 rounded-lg bg-light dark:bg-darkmode-light">
