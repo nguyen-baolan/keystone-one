@@ -159,6 +159,12 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+@media (max-width: 1023px) {
+  .order-1.ml-auto.flex.items-center {
+    @apply mr-4;
+  }
+}
+
 .work-card-compact .btn {
   @apply mt-auto;
 }
