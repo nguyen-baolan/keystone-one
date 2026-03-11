@@ -64,6 +64,10 @@ team:
         title: "AI Strategy Consultant"
         bio: "Analyzes business requirements and designs AI implementation roadmaps tailored to organizational constraints and objectives."
         image: "/images/quinn.jpg"
+      - name: "Next"
+        title: "New AI team member in progress..."
+        bio: "We continuously build and develop new AI team members to support our clients."
+        image: "/images/team-member-ai.jpg"        
 
 # Global Presence
 presence:

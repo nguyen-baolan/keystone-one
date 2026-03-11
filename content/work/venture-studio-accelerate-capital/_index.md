@@ -8,12 +8,12 @@ aliases:
   - /work/enabling-a-venture-studio-to-accelerate-capital-allocations/
 
 # Used by /work/ card grid
-challenge: "Capital allocation decisions were slow, inconsistent, and difficult to audit."
-solution: "A team of AI agents who analyze investment opportunities autonomously and aid in allocating capital."
-audience: "CEO, CFO, Investment Committee, Venture Studio Leadership"
+challenge: "Manual and inconsistent investment diligence process slows down capital deployment."
+solution: "A team of AI agents analyzes investment opportunities autonomously and aids in allocating capital."
+audience: "CEO, CFO, GP"
 reading_time: "8 min"
 engagement_type: "Implementation & Strategy"
-industry: "Venture Capital"
+industry: "Private Capital Markets"
 
 # Optional media
 image: "/images/venture-team.jpg"

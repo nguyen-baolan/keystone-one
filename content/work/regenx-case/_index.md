@@ -6,10 +6,10 @@ description: "A GenAI platform to help remote farmers shift to regenerative farm
 # Used by /work/ card grid
 challenge: "International buyers struggled to transition fragmented farmers to low-carbon practices at scale."
 solution: "A mobile-first, AI-powered agronomic guidance platform that simplified regenerative farming adoption through photo-based assessments."
-audience: "Supply Chain Leaders, Sustainability Officers, Agricultural Buyers, ESG Teams"
+audience: "Carbon team, ESG Head"
 reading_time: "7 min"
 engagement_type: "Platform Development & Implementation"
-industry: "Agriculture & Supply Chain"
+industry: "Agri Supply Chain"
 
 # Optional media
 image: "/images/regen-ag-farm.jpg"

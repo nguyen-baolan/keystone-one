@@ -45,11 +45,11 @@ regulated_industries:
   cases:
     - name: "Crédit Agricole | Regulatory Digital Transformation"
       sector: "Wholesale Banking | Regulatory Digital Transformation"
-      summary: "Led a regulatory digital transformation under new pan-European banking regulations, helping the bank be the first to be compliant and enable new payment services for Enterprises."
+      summary: "Led the transition to digital Enterprise Payment rails under a new pan-European banking regulations, helping the bank be the first to market new payment services for Enterprises."
       
     - name: "Banque de France"
       sector: "Central Banking | Regulatory Digital Transformation"
-      summary: "Collaborated with France's central bank to fully digitize its nation-wide tax collection system, integrate seamlessly across its legacy environment while complying with high governance standards."
+      summary: "Advised the French Central Bank on the digitization of its nation-wide tax collection system, and provided roadmaps to integrate seamlessly across its legacy environments."
 
       
 ---

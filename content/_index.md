@@ -57,9 +57,5 @@ manifesto:
     - title: "Institutional-grade governance"
       content: "Every system we build includes audit trails, compliance controls and governance frameworks ensuring transparency and proper monitoring."
             
-    - title: "Glass box by default"
-      content: "You get full transparency in how AI systems make decisions out of the box. Every output is traceable, explainable, and auditable."
-
-
 
 ---
