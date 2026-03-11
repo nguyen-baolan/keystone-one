@@ -26,7 +26,7 @@ sections:
     content: "We embedded ourselves in the buyers' existing training programs to understand farmer workflows, constraints, and digital literacy levels. Rather than building a complex system, we designed a mobile-first experience that abstracted agronomic complexity into something any farmer could use.<br><br>We delivered a production-grade AI platform in partnership with agronomists and sustainability teams."
     bulletpoints:
       - "We conducted field research with farmers and agronomists to understand real-world constraints and adoption barriers"
-      - "We designed a mobile-first interface requiring minimal digital literacy—farmers simply take photos of their farms, crops, and fertilizers"
+      - "We designed a mobile-first interface requiring minimal digital literacy. Farmers simply take photos of their farms, crops, and fertilizers"
       - "We built a multi-agent AI orchestration system that analyzed farm conditions, synthesized agronomic best practices, and generated personalized transition plans"
       - "We abstracted the complexity of regenerative farming practices, making expert guidance accessible to every farmer regardless of education level"
       - "We integrated with buyers' existing training programs and field extension services for seamless adoption"

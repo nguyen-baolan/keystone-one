@@ -65,7 +65,7 @@ team:
         bio: "Analyzes business requirements and designs AI implementation roadmaps tailored to organizational constraints and objectives."
         image: "/images/quinn.jpg"
       - name: "Next"
-        title: "New AI team member in progress..."
+        title: "Onboarding new AI team members..."
         bio: "We continuously build and develop new AI team members to support our clients."
         image: "/images/team-member-ai.jpg"        
 
