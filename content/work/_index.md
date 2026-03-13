@@ -19,12 +19,12 @@ clients:
 
 # AI & Emerging Tech Portfolio
 tech_portfolio:
-  title: "Value creation using AI and emerging technologies"
+  title: "How we create value using AI and emerging technologies"
   subtitle: "From SaaS platforms to agentic systems, delivering measurable business impact"
   cases:
     - name: "Wavemaker Impact"
       sector: "Climate Tech Investment | Agentic AI"
-      summary: "Enabled a venture-building studio to leverage generative AI for venture analysis, market research, and investment decision-making. Custom AI infrastructured compressed the investment analysis time from months to hours, empowering the venture team to evaluate more opportunities with greater analytical depth."
+      summary: "Enabled a venture-building studio to leverage generative AI for venture analysis, market research, and investment decision-making. Custom AI infrastructured compressed the investment analysis time from months to hours, empowering the venture team to evaluate more opportunities with greater depth."
       
     - name: "RegenX"
       sector: "Climate Tech | Generative AI"
@@ -45,7 +45,7 @@ regulated_industries:
   cases:
     - name: "Crédit Agricole | Regulatory Digital Transformation"
       sector: "Wholesale Banking | Regulatory Digital Transformation"
-      summary: "Led the transition to digital Enterprise Payment rails under a new pan-European banking regulations, helping the bank be the first to market new payment services for Enterprises."
+      summary: "Led the transition to digital Enterprise Payment rails under a new pan-European banking regulations, helping the bank be the first to market new payment services to Enterprise clients."
       
     - name: "Banque de France"
       sector: "Central Banking | Regulatory Digital Transformation"

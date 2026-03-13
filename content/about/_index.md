@@ -14,11 +14,11 @@ draft: false
 # Keystone Philosophy
 philosophy:
   - title: "Keystone in architecture"
-    icon: "🏛️"
+    icon: ""
     content: |
-      The name Keystone comes from architecture. In a stone arch or bridge, the keystone is an element playing the role of interface between all other elements, holding them together.
+      In a stone arch or bridge, the keystone is an element playing the role of interface between all other elements, holding them together.
 
-      At Keystone One, we sit at the interface between business objectives and technology, helping clients align strategy, AI, and operational processes to develop a new competitive edge. 
+      At Keystone One, we sit at the interface between business objectives and technology, helping clients align strategy, AI, and operational processes to cement their new AI competitive edge. 
 
   # - title: "Keystone in ecosystems"
   #   icon: "🌱"
@@ -28,11 +28,11 @@ philosophy:
   #     In our work, we co-create keystone AI intelligence that allows your teams to operate at their highest potential.
 
   - title: "The 'One' in Keystone One"
-    icon: "🎯"
+    icon: ""
     content: |
       One client, one solution. 
       
-      We believe in tailoring the AI infrastructure to your unique constraints and strategic objectives.
+      We tailor the AI infrastructure and governance frameworks to our Client's unique situation in order to deliver business outcomes, not just productivity.
       
 # Team
 team:
@@ -46,7 +46,7 @@ team:
   approach:
     title: "Our evolving, agentic team"
     content: |
-      We leverage AI capabilities to build **agentic teams** across the functions we need to deliver the absolute best value to our clients.
+      We use AI to build **agentic teams** across the functions we need to deliver the absolute best value to our clients.
            
       By building and using agentic AI systems ourselves, we understand firsthand what works in production, what governance frameworks are truly necessary, and how to transfer capabilities to client teams.
     
@@ -58,11 +58,11 @@ team:
         image: "/images/atlas.png"
       - name: "Iris"
         title: "AI Documentation Specialist"
-        bio: "Creates comprehensive technical documentation, governance frameworks, and compliance materials aligned with institutional standards."
+        bio: "Creates comprehensive technical documentation and enablement materials for our Clients."
         image: "/images/iris.jpg"
       - name: "Quinn"
         title: "AI Strategy Consultant"
-        bio: "Analyzes business requirements and designs AI implementation roadmaps tailored to organizational constraints and objectives."
+        bio: "Assists in business and technical requirements across various AI architectures."
         image: "/images/quinn.jpg"
       - name: "Next"
         title: "Onboarding new AI team members..."

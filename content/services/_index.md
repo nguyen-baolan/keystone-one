@@ -14,11 +14,9 @@ audience:
   title: "Who we serve"
   segments:
     - name: "Professional services firms"
-      description: "Scaling beyond $10M+ revenue and seeking to leverage AI for competitive advantage without diluting service quality or client relationships."
+      description: "With $10M+ revenue and seeking to leverage AI to accelerate decision making."
     - name: "Investment firms"
-      description: "Managing $100M+ AUM and requiring AI systems that meet fiduciary standards, regulatory compliance, and institutional governance requirements."
-    - name: "Regulated mid-market enterprises"
-      description: "Modernizing legacy workflows in regulated sectors where AI must operate within strict compliance frameworks."
+      description: "Managing $100M+ AUM and requiring auditable, replayable and confidential AI decision support systems to meet regulatory compliance."
 
 # Service Offerings
 offerings:
@@ -29,7 +27,7 @@ offerings:
       deliverables:
         - "AI readiness audit and capability assessment"
         - "Use case identification and ROI quantification"
-        - "Multi-year AI transformation roadmap"
+        - "AI transformation roadmap"
         - "Governance frameworks and risk management protocols"
         - "Regulatory compliance and audit trail architecture"
         
@@ -37,19 +35,17 @@ offerings:
       description: "Hands-on technical implementation of production-grade AI systems tailored to your specific workflows, data architecture, and operational constraints."
       deliverables:
         - "Bespoke AI workflow design and implementation"
-        - "Multi-agent orchestration systems"
+        - "Model selection and multi-agent orchestration"
         - "Integration with existing enterprise systems"
         - "Data pipeline architecture and implementation"
-        - "Model selection, fine-tuning, and deployment"
         
     - name: "Capability Transfer & Internal Enablement"
       description: "Knowledge transfer and upskilling programs that enable your teams to operate, maintain, and evolve AI systems independently."
       deliverables:
         - "Internal champion training and enablement"
-        - "Technical documentation and runbooks"
+        - "Technical documentation and playbooks"
         - "Hands-on workshops and knowledge transfer sessions"
-        - "Ongoing advisory and technical support (as-needed)"
-        - "Continuous improvement frameworks"
+        - "Ongoing advisory and technical support"
 
 # Methodology
 methodology:
@@ -125,11 +121,8 @@ technical:
     - name: "Data sovereignty"
       description: "We design systems that align with your data sovereignty requirements, privacy regulations, and security policies."
       
-    - name: "Swappable frontier models"
+    - name: "Swappable models"
       description: "No lock-in to specific AI providers. Our architectures support seamless model swapping so you don't get stuck with one vendor."
-      
-    - name: "Open-source leverage"
-      description: "When suitable, we build on proven open-source foundations, reducing costs and avoiding proprietary dependencies."
       
     - name: "Token economics awareness"
       description: "We optimize for cost-efficiency and will provide you with transparency on token and infrastructure costs so that you can forecast OPEX easily."
