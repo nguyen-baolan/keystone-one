@@ -16,7 +16,7 @@ banner:
 
 USP:
   enable: true
-  title: "We help companies in knowledge-intensive industries to make better and faster AI-driven decisions."
+  title: "We help companies turn fragmented data into a decision engine."
 
 # Client Logo Carousel
 clients:
